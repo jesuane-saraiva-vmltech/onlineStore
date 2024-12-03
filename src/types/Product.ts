@@ -1,7 +1,9 @@
 export interface Product {
   id: string;
-  name: string;
+  title: string;
   price: number;
   image: string;
   description: string;
 }
+
+export type ProductCardProps = { product: Product };
