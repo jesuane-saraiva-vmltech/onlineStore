@@ -1,0 +1,24 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.btn {
+  background-color: v.$color-accent-tertiary;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: v.$font-size-sm;
+  text-transform: uppercase;
+  padding: v.$button-padding;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: v.$color-btn-hover;
+  }
+}

@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.header {
+  background-color: v.$color-bg-primary;
+  padding: 1rem;
+  height: v.$header-height;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  @include m.sticky-element(0);
+  z-index: 200;
+}

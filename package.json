@@ -18,9 +18,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run sass:build && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass:watch": "sass --watch src/styles/scss:src/styles/css",
+    "sass:compressed": "sass src/styles/scss:src/styles/css --style compressed",
+    "sass:build": "npm run sass:compressed",
+    "dev": "concurrently \"npm run start\" \"npm run sass:watch\""
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "sass": "^1.81.1"
   }
 }
