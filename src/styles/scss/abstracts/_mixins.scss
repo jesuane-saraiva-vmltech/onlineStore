@@ -29,7 +29,13 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 @mixin respond($breakpoint) {
-  // Small phones (0 - 600px) is default, no media query needed
+  // Small phones (0 - 400px) is default, no media query needed
+
+  @if $breakpoint == md-phone {
+    @media only screen and (min-width: 25em) {
+      @content;
+    } //400px
+  }
 
   @if $breakpoint == lg-phone {
     @media only screen and (min-width: 37.5em) {

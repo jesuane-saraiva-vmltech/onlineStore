@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+/*
+0 - 600px:      Phone -> is where our normal styles apply
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- lg-phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+/* .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+
+  @include m.respond(lg-phone) {
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: repeat(3, auto);
+  }
+  @include m.respond(tab-port) {
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
+} */
+.main {
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=Layout.module.css.map */

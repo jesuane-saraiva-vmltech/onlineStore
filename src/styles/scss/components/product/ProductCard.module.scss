@@ -1,3 +1,5 @@
+@use "../../abstracts/variables" as variables;
+
 .card {
   background: white;
   border-radius: 8px;
@@ -55,15 +57,15 @@
     .addToCart {
       width: 100%;
       padding: 0.75rem;
-      background: #000;
+      background: variables.$color-btn;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 0.4rem;
       cursor: pointer;
       transition: background 0.2s ease;
 
       &:hover {
-        background: #333;
+        background: variables.$color-btn-hover;
       }
     }
   }

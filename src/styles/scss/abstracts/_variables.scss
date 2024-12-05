@@ -1,18 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+
 // COLORS
-$color-bg-primary: #121212;
-$color-bg-secondary: #1e1e1e;
-$color-bg-tertiary: #292d26;
-$color-text-primary: #ffffff;
-$color-text-secondary: #b3b3b3;
-$color-accent-primary: #04ff8e; // Giphy's bright green
-$color-accent-secondary: #ff5b5b; // Giphy's pink/red
-$color-accent-tertiary: #9933ff; // Giphy's purple
-$color-btn-hover: #9933ffb7;
+$color-bg-primary: #fff;
+$color-bg-secondary: #907ad6;
+$color-bg-tertiary: #4f518c;
+$color-text-primary: #000;
+$color-text-secondary: #333;
+$color-accent-primary: #ffc700;
+$color-accent-secondary: #ff9f1c;
+$color-accent-tertiary: #ffb800;
+$color-btn: #f7a800;
+$color-btn-hover: #333;
 $color-btn-disabled: #4f4d51b7;
+$color-outline: rgb(30, 143, 62);
 
 // FONT
+$font-heading: "Barriecito", sans-serif;
+$font-body: "Space Grotesk", sans-serif;
 $default-font-size: 1.4rem;
 $default-icon-size: 1.8rem;
+$font-count: 1rem;
 $heading-font-size-primary: 2.4rem;
 $heading-font-size-secondary: 2.3rem;
 $font-size-sm: 1.25rem;
@@ -25,11 +33,8 @@ $button-padding: 1rem;
 $search-input-padding: 0.8rem;
 
 // DIV HEIGHTS
-$header-height: 5.4rem;
-$nav-height: 4.3rem;
-$section-height: calc(100vh - (#{$header-height} + #{$nav-height}));
-$section-height-no-nav: calc(100vh - #{$header-height});
+$header-height: 6.5rem;
+$section-height: calc(100vh - (#{$header-height}));
 
 // GAPS & MARGINS
 $default-gap: 1rem;
-$pagination-gap: 1.2rem;

@@ -1,33 +1,39 @@
-@use "../abstracts/variables" as v;
-@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as variables;
+@use "../abstracts/mixins" as mixins;
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+
+  &:focus-visible {
+    // Only show outline on keyboard focus
+    outline: 1.3rem solid variables.$color-outline !important;
+    outline-offset: 0.2rem !important;
+  }
 }
 
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
 
-  @include m.respond(lg-phone) {
+  @include mixins.respond(md-phone) {
     // 600px+
     font-size: 68.75%; //1 rem->11px, 11/16 = 68.75%
   }
 
-  @include m.respond(tab-port) {
+  @include mixins.respond(lg-phone) {
     // 900px+
     font-size: 75%; //1 rem->12px, 12/16 = 75%
   }
 
-  @include m.respond(tab-land) {
+  @include mixins.respond(tab-land) {
     // 1200px+
     font-size: 81.25%; //1rem = 13, 13/16=81.25%
   }
 
-  @include m.respond(big-desktop) {
+  @include mixins.respond(big-desktop) {
     // 1800px+
     font-size: 87.5%; //1rem = 14, 14/16=87.5%
   }
@@ -35,5 +41,5 @@ html {
 
 body {
   box-sizing: border-box;
-  font-size: v.$default-font-size;
+  font-size: variables.$default-font-size;
 }

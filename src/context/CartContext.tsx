@@ -14,11 +14,12 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
       if (existingItem) {
         // If exists, update quantity
-        return prevItems.map((item) =>
+        const updatedItems = prevItems.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + quantity }
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         );
+        return updatedItems;
       }
 
       // If doesn't exist, add new item
@@ -30,13 +31,17 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const total = items.reduce(
+  const totalPrice = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
+  const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, total }}>
+    <CartContext.Provider
+      value={{ items, addItem, removeItem, totalPrice, totalQuantity }}
+    >
       {children}
     </CartContext.Provider>
   );

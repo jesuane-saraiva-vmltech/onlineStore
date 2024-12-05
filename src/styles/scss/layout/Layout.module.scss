@@ -1,7 +1,7 @@
-@use "../abstracts/variables" as v;
-@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as variables;
+@use "../abstracts/mixins" as mixins;
 
-.container {
+/* .container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, auto);
@@ -14,4 +14,8 @@
     grid-template-columns: 1fr 2.5fr 1fr;
     grid-template-rows: repeat(2, auto);
   }
+} */
+
+.main {
+  background-color: variables.$color-bg-primary;
 }

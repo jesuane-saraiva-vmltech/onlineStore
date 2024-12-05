@@ -5,6 +5,8 @@ import Layout from "./components/layout/Layout";
 import { CartProvider } from "./context/CartContext";
 import LandingPage from "./pages/LandingPage";
 import ProductListPage from "./pages/ProductListPage";
+import "./styles/css/global.css";
+import { WishlistProvider } from "./context/WishlistContext";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +31,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <CartProvider>
-        <RouterProvider router={router} />
+        <WishlistProvider>
+          <RouterProvider router={router} />
+        </WishlistProvider>
       </CartProvider>
     </QueryClientProvider>
   );
