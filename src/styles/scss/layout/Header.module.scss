@@ -1,5 +1,6 @@
 @use "../abstracts/variables" as variables;
 @use "../abstracts/mixins" as mixins;
+@use "../base/animations" as animations;
 
 .header {
   display: grid;
@@ -61,6 +62,7 @@
 
     &.isOpen {
       display: block;
+      animation: dropDown 0.3s ease forwards;
     }
 
     .navigationList {

@@ -78,6 +78,7 @@ const Header = () => {
         </ul>
       </nav>
 
+      {/* TODO: use framer motion to add animation when nav is closed!! */}
       <div
         className={styles.actions}
         role="navigation"

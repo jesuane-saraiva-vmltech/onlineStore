@@ -17,6 +17,26 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
+@keyframes dropDown {
+  from {
+    opacity: 0;
+    transform: translateY(-0.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-0.2rem);
+  }
+}
 .header {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
@@ -80,6 +100,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 .header .navigation.isOpen {
   display: block;
+  animation: dropDown 0.3s ease forwards;
 }
 .header .navigation .navigationList {
   display: flex;
