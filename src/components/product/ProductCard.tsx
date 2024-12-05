@@ -3,6 +3,7 @@ import { ProductCardProps } from "../../types/Product";
 
 import styles from "../../styles/css/components/product/ProductCard.module.css";
 
+// TODO i don't think this is reusable enough :)
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();
 

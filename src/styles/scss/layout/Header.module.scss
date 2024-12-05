@@ -53,6 +53,7 @@
     grid-column: 2/3;
     grid-row: 2/3;
     justify-self: center;
+    animation: dropDown 0.2s ease forwards;
 
     @include mixins.respond(md-phone) {
       display: block;
@@ -62,7 +63,6 @@
 
     &.isOpen {
       display: block;
-      animation: dropDown 0.3s ease forwards;
     }
 
     .navigationList {
@@ -109,7 +109,13 @@
     .cart {
       position: relative;
       cursor: pointer;
+      background-color: transparent;
+      border: none;
+      font-size: variables.$default-icon-size;
 
+      &:hover {
+        color: variables.$color-accent-primary;
+      }
       .count {
         position: absolute;
         top: -0.8rem;

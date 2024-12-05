@@ -1,0 +1,40 @@
+/*
+0 - 600px:      Phone -> is where our normal styles apply
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- lg-phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 320px;
+  max-width: 90vw;
+  max-height: 90vh;
+  padding: 2rem;
+  background: white;
+  border: none;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.5rem 0.24rem rgba(0, 0, 0, 0.12);
+  /*   display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.5rem; */
+}
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/*# sourceMappingURL=Modal.module.css.map */
