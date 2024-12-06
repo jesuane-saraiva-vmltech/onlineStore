@@ -1,0 +1,36 @@
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  padding: 1rem;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.card .imageContainer {
+  position: relative;
+  padding-top: 100%;
+}
+.card .imageContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card .title {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+.card .price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0.5rem 0;
+}
+
+/*# sourceMappingURL=BaseProductCard.module.css.map */

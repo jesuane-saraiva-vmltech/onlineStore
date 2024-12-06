@@ -1,0 +1,37 @@
+@use "../../abstracts/variables" as variables;
+
+.content {
+  padding: 1rem;
+
+  .wishlistButton {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000;
+    margin: 0.5rem 0;
+  }
+
+  .addToCart {
+    width: 100%;
+    padding: 0.75rem;
+    background: variables.$color-btn;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: variables.$color-btn-hover;
+    }
+  }
+}

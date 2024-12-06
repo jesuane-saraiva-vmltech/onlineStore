@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import ProductCard from "../components/product/ProductCard";
+import ProductCard from "../components/productCards/ProductCard";
 import styles from "../styles/css/pages/ProductListPage.module.css";
 import { fetchProducts } from "../api/fakeStoreAPI";
 
