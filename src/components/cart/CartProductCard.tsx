@@ -6,6 +6,9 @@ import {
 import BaseProductCard from "../ui/BaseProductCard";
 
 import styles from "../../styles/css/components/cart/CartProductCard.module.css";
+import Button from "../ui/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 const CartProductCard = ({
   cartItem,
@@ -20,15 +23,23 @@ const CartProductCard = ({
     >
       <div className={styles.container}>
         <div className={styles.quantity}>
-          <button onClick={() => onUpdateQuantity(cartItem.quantity - 1)}>
-            -
+          <button
+            className={styles.updateButton}
+            onClick={() => onUpdateQuantity(cartItem.quantity - 1)}
+          >
+            <FontAwesomeIcon icon={faMinusCircle} />
           </button>
-          <span>{cartItem.quantity}</span>
-          <button onClick={() => onUpdateQuantity(cartItem.quantity + 1)}>
-            +
+          <span className={styles.quantityText}>{cartItem.quantity}</span>
+          <button
+            className={styles.updateButton}
+            onClick={() => onUpdateQuantity(cartItem.quantity + 1)}
+          >
+            <FontAwesomeIcon icon={faPlusCircle} />
           </button>
         </div>
-        <button onClick={onRemove}>Remove</button>
+        <div>
+          <Button onClick={onRemove}>Remove</Button>
+        </div>
       </div>
     </BaseProductCard>
   );

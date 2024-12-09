@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { useWishlist } from "../../context/WishlistContext";
+import Button from "../ui/Button";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();
@@ -15,9 +16,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <BaseProductCard product={product}>
       <div className={styles.content}>
-        <button className={styles.addToCart} onClick={() => addItem(product)}>
-          Add to Cart
-        </button>
+        <Button onClick={() => addItem(product)}>Add to Cart</Button>
         <button
           aria-label="Add to wishlist"
           className={styles.wishlistButton}

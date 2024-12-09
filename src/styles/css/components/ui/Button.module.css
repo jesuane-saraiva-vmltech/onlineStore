@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #f7a800;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.button:hover {
+  background-color: #333;
+}
+
+/*# sourceMappingURL=Button.module.css.map */

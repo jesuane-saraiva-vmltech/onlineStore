@@ -1,2 +1,30 @@
+@use "../../abstracts/variables" as variables;
+
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+
+  .quantity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .quantityText {
+      font-size: variables.$font-size-sm-secondary;
+      min-width: 2rem;
+      text-align: center;
+    }
+  }
+
+  .updateButton {
+    background-color: transparent;
+    border: none;
+    font-size: variables.$font-size-md;
+    cursor: pointer;
+    &:hover {
+      opacity: 70%;
+    }
+  }
 }
