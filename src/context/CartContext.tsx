@@ -31,6 +31,19 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const updateQuantity = (id: string, quantity: number) => {
+    if (quantity < 1) {
+      setItems((prev) => prev.filter((item) => item.id !== id));
+      return;
+    }
+
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
+      )
+    );
+  };
+
   const totalPrice = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -40,7 +53,14 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <CartContext.Provider
-      value={{ items, addItem, removeItem, totalPrice, totalQuantity }}
+      value={{
+        items,
+        addItem,
+        removeItem,
+        totalPrice,
+        totalQuantity,
+        updateQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>

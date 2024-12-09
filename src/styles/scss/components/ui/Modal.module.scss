@@ -1,26 +1,35 @@
 @use "../../abstracts/mixins" as mixins;
 
 .modal {
-  @include mixins.center;
+  @include mixins.center(relative);
 
-  min-width: 320px;
+  min-width: 30rem;
   max-width: 90vw;
   max-height: 90vh;
-  padding: 2rem;
 
   background: white;
   border: none;
   border-radius: 0.8rem;
   box-shadow: 0 0.5rem 0.24rem rgba(0, 0, 0, 0.12);
 
-  // Layout
-  /*   display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 1.5rem; */
-
-  // Backdrop style
   &::backdrop {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 0;
+    right: 0.3rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    line-height: 1;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }

@@ -1,14 +1,25 @@
+import { CartItem } from "./Cart";
 import { Product } from "./Product";
+
+export enum ImageSize {
+  Small = "Small",
+  Medium = "Medium",
+  Large = "Large",
+}
+export enum Direction {
+  Horizontal = "horizontal",
+  Vertical = "vertical",
+}
 
 export type BaseProductCardProps = {
   product: Product;
   children?: React.ReactNode;
-  moduleStyles?: string;
+  imageSize?: ImageSize;
+  direction?: Direction;
 };
 
 export type CartProductCardProps = {
-  product: Product;
-  quantity: number;
+  cartItem: CartItem;
   onUpdateQuantity: (quantity: number) => void;
   onRemove: () => void;
 };

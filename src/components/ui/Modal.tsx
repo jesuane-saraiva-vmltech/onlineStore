@@ -2,7 +2,9 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import { ModalProps } from "../../types/Modal";
-import styles from "../../styles/css/components/modal/Modal.module.css";
+import styles from "../../styles/css/components/ui/Modal.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Modal({
   children,
@@ -28,7 +30,15 @@ export default function Modal({
       ref={dialog}
       className={`${moduleStyles} ${styles.modal}`}
       onClose={onClose}
+      onClick={(e) => e.target === e.currentTarget && onClose()} // if user clicks on the blur
     >
+      <button
+        className={styles.closeButton}
+        onClick={onClose}
+        aria-label="Close modal"
+      >
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
       {children}
     </dialog>,
     document.body

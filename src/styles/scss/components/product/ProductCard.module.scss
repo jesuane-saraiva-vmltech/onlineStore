@@ -1,16 +1,22 @@
 @use "../../abstracts/variables" as variables;
 
 .content {
-  padding: 1rem;
+  // padding: 1rem;
 
   .wishlistButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: none;
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: variables.$default-icon-size;
+    text-align: center;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: variables.$color-accent-tertiary;
   }
 
   .price {

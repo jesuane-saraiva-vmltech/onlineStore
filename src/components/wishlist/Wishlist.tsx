@@ -1,5 +1,5 @@
 import { WishlistProductCardProps } from "../../types/ProductCard";
-import BaseProductCard from "./BaseProductCard";
+import BaseProductCard from "../ui/BaseProductCard";
 
 import styles from "../../styles/css/components/productCard/WishlistProductCard.module.css";
 

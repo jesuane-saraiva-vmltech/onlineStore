@@ -12,8 +12,8 @@ import styles from "../../styles/css/layout/Header.module.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { ModalType } from "../../types/Modal";
-import Modal from "../modal/Modal";
-import CartProduct from "../productCards/CartProductCard";
+import Modal from "../ui/Modal";
+import Cart from "../cart/Cart";
 
 const Header = () => {
   const { totalQuantity: totalCartItems } = useCart();
@@ -123,10 +123,10 @@ const Header = () => {
           </button>
         </div>
       </motion.header>
-      {/*       <Modal onClose={() => toggleModal(null)} open={modalType !== null}>
-        {modalType === "cart" && <CartProduct></CartProduct>} 
-        {modalType === "wishlist" && <CartContent></CartContent>} 
-      </Modal> */}
+      <Modal onClose={() => toggleModal(null)} open={modalType !== null}>
+        {modalType === "cart" && <Cart />}
+        {/* {modalType === "wishlist" && <CartContent></CartContent>}  */}
+      </Modal>
     </>
   );
 };

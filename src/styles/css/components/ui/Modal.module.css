@@ -16,11 +16,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 .modal {
-  position: fixed;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 320px;
+  min-width: 30rem;
   max-width: 90vw;
   max-height: 90vh;
   background: white;
@@ -31,6 +31,20 @@ ORDER: Base + typography > general layout + grid > page layout > components
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
+}
+.modal .closeButton {
+  position: absolute;
+  top: 0;
+  right: 0.3rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+.modal .closeButton:hover {
+  opacity: 0.7;
 }
 
 /*# sourceMappingURL=Modal.module.css.map */

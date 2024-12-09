@@ -1,0 +1,15 @@
+.cart {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.cart .empty {
+  text-align: center;
+  font-weight: 300;
+}
+.cart .title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=Cart.module.css.map */

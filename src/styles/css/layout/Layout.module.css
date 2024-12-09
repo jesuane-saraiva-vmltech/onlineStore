@@ -32,7 +32,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
   }
 } */
 .main {
-  background-color: #fff;
+  background-color: #fafaf7;
 }
 
 /*# sourceMappingURL=Layout.module.css.map */

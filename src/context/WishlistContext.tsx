@@ -16,7 +16,7 @@ export const WishlistProvider = ({
   const toggleWishlist = (product: Product) => {
     setItems((prevItems) =>
       prevItems.some((item) => item.id === product.id)
-        ? prevItems.filter((item) => item.id === product.id)
+        ? prevItems.filter((item) => item.id !== product.id)
         : [...prevItems, product]
     );
   };
