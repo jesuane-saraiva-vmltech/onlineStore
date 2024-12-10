@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+/* $section-padding-sm: 1rem 2.5rem;
+$button-padding: 1rem;
+$search-input-padding: 0.8rem;*/
+@keyframes dropDown {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner {
+  border: 0.4rem solid #f3f3f3;
+  border-top: 0.4rem solid #ffc700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.spinner.small {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-width: 0.2rem;
+}
+.spinner.medium {
+  width: 4.8rem;
+  height: 4.8rem;
+  border-width: 0.4rem;
+}
+.spinner.large {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-width: 0.5rem;
+}
+
+/*# sourceMappingURL=LoadingSpinner.module.css.map */

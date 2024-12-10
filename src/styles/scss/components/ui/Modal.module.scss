@@ -1,7 +1,7 @@
 @use "../../abstracts/mixins" as mixins;
 
 .modal {
-  @include mixins.center(relative);
+  @include mixins.center;
 
   min-width: 30rem;
   max-width: 90vw;

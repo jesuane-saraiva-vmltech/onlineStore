@@ -60,13 +60,21 @@ ORDER: Base + typography > general layout + grid > page layout > components
     transform: translateY(20px);
   }
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .header {
   display: grid;
   grid-template-columns: max-content 1fr max-content;
   gap: 0.5rem;
   align-items: center;
   padding: 1rem 2rem;
-  background: #fafaf7;
+  background: white;
   border-bottom: 0.18rem solid #f0f0f0;
 }
 @media only screen and (min-width: 25em) {

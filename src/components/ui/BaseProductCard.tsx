@@ -4,9 +4,10 @@ import {
   Direction,
   ImageSize,
 } from "../../types/ProductCard";
+import { formatPrice } from "../../utils/formatter";
 
 /*
-Hey! I'm using this component to show prop drilling since it was required in the assignment.
+I'm using this component to show prop drilling since it was required in the assignment.
 In a real project, I'd probably create separate components for each type of card (product, cart, wishlist) instead of passing lots of props to customize one base component.
 It would be cleaner and easier to maintain that way!
 */
@@ -16,7 +17,6 @@ const BaseProductCard = ({
   imageSize = ImageSize.Medium,
   direction = Direction.Vertical,
 }: BaseProductCardProps) => {
-  console.log(product);
   return (
     <div className={`${styles.card} ${styles[direction]}`}>
       <div
@@ -26,7 +26,7 @@ const BaseProductCard = ({
       </div>
       <div className={styles.content}>
         <h2 className={styles.title}>{product.title}</h2>
-        <p className={styles.price}>{product.price}€</p>
+        <p className={styles.price}>{formatPrice(product.price)}</p>
         {children}
       </div>
     </div>

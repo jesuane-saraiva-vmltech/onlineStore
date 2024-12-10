@@ -1,0 +1,27 @@
+@use "../../../abstracts/variables" as variables;
+@use "../../../base/animations" as animations;
+
+.spinner {
+  border: 0.4rem solid #f3f3f3;
+  border-top: 0.4rem solid variables.$color-accent-primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+
+  &.small {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-width: 0.2rem;
+  }
+
+  &.medium {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-width: 0.4rem;
+  }
+
+  &.large {
+    width: 6.4rem;
+    height: 6.4rem;
+    border-width: 0.5rem;
+  }
+}

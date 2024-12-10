@@ -1,25 +1,6 @@
-@use "../abstracts/variables" as v;
-
-%heading-style {
-  font-weight: 700;
-  line-height: 3.988rem;
-  letter-spacing: -0.02rem;
-}
+@use "../abstracts/variables" as variables;
 
 body {
-  font-family: Work Sans, sans-serif;
-  color: v.$color-text-primary;
-}
-
-.heading-primary {
-  @extend %heading-style;
-  color: v.$color-accent-primary;
-  text-transform: uppercase;
-  font-size: v.$heading-font-size-primary;
-}
-.heading-secondary {
-  @extend %heading-style;
-  color: v.$color-accent-secondary;
-  text-transform: capitalize;
-  font-size: v.$heading-font-size-secondary;
+  font-family: variables.$font-body;
+  color: variables.$color-text-primary;
 }

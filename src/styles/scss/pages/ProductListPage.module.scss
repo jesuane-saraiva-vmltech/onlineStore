@@ -1,6 +1,6 @@
 .plp {
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 120rem;
   margin: 0 auto;
 
   .header {
@@ -9,7 +9,7 @@
     align-items: center;
     margin-bottom: 2rem;
 
-    h1 {
+    .title {
       font-size: 2rem;
       color: #333;
     }
@@ -26,7 +26,7 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
     gap: 2rem;
   }
 }

@@ -63,4 +63,9 @@ body {
   font-size: 1.4rem;
 }
 
+body {
+  font-family: "Space Grotesk", sans-serif;
+  color: #000;
+}
+
 /*# sourceMappingURL=global.css.map */
