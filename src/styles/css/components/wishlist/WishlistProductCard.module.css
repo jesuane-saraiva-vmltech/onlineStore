@@ -1,3 +1,22 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+/* $section-padding-sm: 1rem 2.5rem;
+$button-padding: 1rem;
+$search-input-padding: 0.8rem;*/
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+.container .button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.container .button:hover {
+  opacity: 70%;
+}
 
 /*# sourceMappingURL=WishlistProductCard.module.css.map */

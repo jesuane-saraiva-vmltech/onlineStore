@@ -1,0 +1,15 @@
+.wishlist {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.wishlist .empty {
+  text-align: center;
+  font-weight: 300;
+}
+.wishlist .title {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=Wishlist.module.css.map */

@@ -8,6 +8,7 @@
   transition: transform 0.2s ease;
   padding: 1rem;
   position: relative;
+  max-width: variables.$max-card-width;
 
   &.horizontal {
     display: grid;

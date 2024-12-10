@@ -1,0 +1,18 @@
+@use "../../abstracts/variables" as variables;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-end;
+
+  .button {
+    background-color: transparent;
+    border: none;
+    font-size: variables.$font-size-md;
+    cursor: pointer;
+    &:hover {
+      opacity: 70%;
+    }
+  }
+}

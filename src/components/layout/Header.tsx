@@ -14,6 +14,7 @@ import { useState } from "react";
 import { ModalType } from "../../types/Modal";
 import Modal from "../ui/Modal";
 import Cart from "../cart/Cart";
+import Wishlist from "../wishlist/Wishlist";
 
 const Header = () => {
   const { totalQuantity: totalCartItems } = useCart();
@@ -125,7 +126,7 @@ const Header = () => {
       </motion.header>
       <Modal onClose={() => toggleModal(null)} open={modalType !== null}>
         {modalType === "cart" && <Cart />}
-        {/* {modalType === "wishlist" && <CartContent></CartContent>}  */}
+        {modalType === "wishlist" && <Wishlist />}
       </Modal>
     </>
   );

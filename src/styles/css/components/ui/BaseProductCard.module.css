@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+/* $section-padding-sm: 1rem 2.5rem;
+$button-padding: 1rem;
+$search-input-padding: 0.8rem;*/
 .card {
   background: white;
   border-radius: 8px;
@@ -8,6 +11,7 @@
   transition: transform 0.2s ease;
   padding: 1rem;
   position: relative;
+  max-width: 35rem;
 }
 .card.horizontal {
   display: grid;

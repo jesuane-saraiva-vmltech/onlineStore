@@ -16,7 +16,7 @@ const BaseProductCard = ({
   imageSize = ImageSize.Medium,
   direction = Direction.Vertical,
 }: BaseProductCardProps) => {
-  console.log(direction);
+  console.log(product);
   return (
     <div className={`${styles.card} ${styles[direction]}`}>
       <div

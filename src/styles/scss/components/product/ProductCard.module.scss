@@ -5,16 +5,24 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
+    width: 3rem;
+    height: 3rem;
+
     background: white;
+    color: variables.$color-accent-tertiary;
+    font-size: variables.$default-icon-size;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: none;
     border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    font-size: variables.$default-icon-size;
-    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    color: variables.$color-accent-tertiary;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   .price {
