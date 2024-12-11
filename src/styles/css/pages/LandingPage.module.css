@@ -1,9 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+/* $section-padding-sm: 1rem 2.5rem;
+$button-padding: 1rem;
+$search-input-padding: 0.8rem;*/
 .landing .hero {
-  height: 100vh;
+  height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, #f3f4f6, #ffffff);
+  background-color: rgba(126, 126, 126, 0.708);
+  background-image: url("../../../assets/images/image.jpg");
+  background-blend-mode: lighten;
+  background-size: cover;
   padding: 0 2rem;
 }
 .landing .hero .heroContent {
@@ -13,7 +21,7 @@
 .landing .hero .heroContent h1 {
   font-size: 4rem;
   margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+  background: linear-gradient(45deg, #ff9f1c, #ffb800, #ffc700);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -21,13 +29,13 @@
 }
 .landing .hero .heroContent .subtitle {
   font-size: 1.5rem;
-  color: #666;
+  color: white;
   margin-bottom: 2rem;
 }
 .landing .hero .heroContent .cta {
   display: inline-block;
   padding: 1rem 2rem;
-  background: #000;
+  background: #ff9f1c;
   color: white;
   text-decoration: none;
   border-radius: 30px;

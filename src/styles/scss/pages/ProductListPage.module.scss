@@ -1,6 +1,8 @@
+@use "../abstracts/variables" as variables;
+
 .plp {
   padding: 2rem;
-  max-width: 120rem;
+  max-width: variables.$max-container-width;
   margin: 0 auto;
 
   .header {
@@ -17,8 +19,8 @@
     .controls {
       .sort {
         padding: 0.5rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
+        border: 0.1rem solid #ddd;
+        border-radius: 0.4rem;
         background: white;
       }
     }

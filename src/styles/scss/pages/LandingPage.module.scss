@@ -1,10 +1,15 @@
+@use "../abstracts/variables" as variables;
+
 .landing {
   .hero {
-    height: 100vh;
+    height: variables.$section-height;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(45deg, #f3f4f6, #ffffff);
+    background-color: rgba(126, 126, 126, 0.708);
+    background-image: url("../../../assets/images/image.jpg");
+    background-blend-mode: lighten;
+    background-size: cover;
     padding: 0 2rem;
 
     .heroContent {
@@ -14,7 +19,13 @@
       h1 {
         font-size: 4rem;
         margin-bottom: 1.5rem;
-        background: linear-gradient(45deg, #1a1a1a, #4a4a4a);
+        background: linear-gradient(
+          45deg,
+          variables.$color-accent-secondary,
+          variables.$color-accent-tertiary,
+          variables.$color-accent-primary
+        );
+
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -23,14 +34,14 @@
 
       .subtitle {
         font-size: 1.5rem;
-        color: #666;
+        color: white;
         margin-bottom: 2rem;
       }
 
       .cta {
         display: inline-block;
         padding: 1rem 2rem;
-        background: #000;
+        background: variables.$color-accent-secondary;
         color: white;
         text-decoration: none;
         border-radius: 30px;

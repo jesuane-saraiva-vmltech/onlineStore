@@ -67,9 +67,14 @@ ORDER: Base + typography > general layout + grid > page layout > components
   flex-direction: column;
   padding: 1rem;
 }
+.card .content a {
+  text-decoration: none;
+  color: #333;
+  cursor: default;
+}
 .card .title {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.13rem;
   color: #333;
   display: -webkit-box;
   line-clamp: 2;
@@ -77,8 +82,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  height: 2.5rem;
-  line-height: 1.2;
+  height: 2.8rem;
+  cursor: pointer;
+}
+.card .title:hover {
+  opacity: 0.85;
 }
 .card .price {
   font-size: 1.25rem;

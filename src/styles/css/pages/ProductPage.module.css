@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+/* $section-padding-sm: 1rem 2.5rem;
+$button-padding: 1rem;
+$search-input-padding: 0.8rem;*/
+/*
+0 - 600px:      Phone -> is where our normal styles apply
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- lg-phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+.productPage {
+  padding: 2rem;
+  max-width: 70vw;
+  min-height: calc(100vh - 5rem);
+  margin: 0 auto;
+}
+.productPage .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (min-width: 56.25em) {
+  .productPage .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+}
+.productPage .imageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productPage .imageSection img {
+  width: 100%;
+  height: auto;
+  max-width: 40rem;
+  max-height: 40rem;
+  object-fit: contain;
+}
+.productPage .details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.productPage .details h1 {
+  font-size: 2rem;
+  color: #333;
+}
+.productPage .details .price {
+  font-size: 1.65rem;
+  font-weight: bold;
+  color: #000;
+}
+.productPage .details .description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
+.productPage .details .actions {
+  margin-top: auto;
+  align-self: flex-end;
+  max-width: 35rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+/*# sourceMappingURL=ProductPage.module.css.map */

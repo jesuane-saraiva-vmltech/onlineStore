@@ -20,13 +20,18 @@ ORDER: Base + typography > general layout + grid > page layout > components
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 30rem;
   max-width: 90vw;
   max-height: 90vh;
+  min-width: 31rem;
   background: white;
   border: none;
   border-radius: 0.8rem;
   box-shadow: 0 0.5rem 0.24rem rgba(0, 0, 0, 0.12);
+}
+@media only screen and (min-width: 25em) {
+  .modal {
+    min-width: 35rem;
+  }
 }
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.5);

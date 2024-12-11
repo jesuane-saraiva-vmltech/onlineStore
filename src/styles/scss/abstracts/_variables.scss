@@ -3,15 +3,14 @@
 
 // COLORS
 $color-bg-primary: #fafaf7;
-$color-bg-secondary: #907ad6;
-$color-bg-tertiary: #4f518c;
+$color-bg-secondary: #f5e9e0;
 $color-text-primary: #000;
 $color-text-secondary: #333;
 $color-accent-primary: #ffc700;
 $color-accent-secondary: #ff9f1c;
 $color-accent-tertiary: #ffb800;
 $color-btn: #f7a800;
-$color-btn-hover: #333;
+$color-btn-dark: #333;
 $color-btn-disabled: #4f4d51b7;
 $color-outline: rgb(30, 143, 62);
 
@@ -20,24 +19,25 @@ $font-heading: "Barriecito", sans-serif;
 $font-body: "Space Grotesk", sans-serif;
 $default-font-size: 1.4rem;
 $default-icon-size: 1.8rem;
-$font-size-card-title: 1.1rem;
+$font-size-card-title: 1.13rem;
 $heading-font-size-primary: 2.4rem;
 $heading-font-size-secondary: 2rem;
 $font-size-sm: 1rem;
 $font-size-sm-secondary: 1.3rem;
-$font-size-md: 1.6rem;
+$font-size-md: 1.65rem;
 $font-size-lg: 3rem;
-
-$max-card-width: 35rem;
 
 // PADDINGS
 /* $section-padding-sm: 1rem 2.5rem;
 $button-padding: 1rem;
 $search-input-padding: 0.8rem;*/
 
-// DIV HEIGHTS
-$header-height: 6.5rem;
-$section-height: calc(100vh - (#{$header-height}));
+// DIV HEIGHTS and WIDTHS
+$header-height: 5rem;
+$section-height: calc(100vh - #{$header-height});
+$max-card-width: 35rem;
+$max-container-width: 80vw;
+$max-product-container-width: 70vw;
 
 // GAPS & MARGINS
 $default-gap: 1rem;

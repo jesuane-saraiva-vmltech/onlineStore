@@ -1,7 +1,12 @@
+@use "../../abstracts/mixins" as mixins;
+
 .cart {
   display: grid;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 1.2rem;
+  @include mixins.respond(md-phone) {
+    padding: 2rem;
+  }
 
   .empty {
     text-align: center;

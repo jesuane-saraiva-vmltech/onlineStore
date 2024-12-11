@@ -6,13 +6,18 @@ $search-input-padding: 0.8rem;*/
 .button {
   width: 100%;
   padding: 0.75rem;
-  background-color: #f7a800;
   color: white;
   border: none;
   border-radius: 0.4rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+.button.light {
+  background-color: #f7a800;
+}
+.button.dark {
+  background-color: #333;
 }
 .button:hover {
   opacity: 0.8;

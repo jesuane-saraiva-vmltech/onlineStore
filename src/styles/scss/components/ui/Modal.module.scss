@@ -2,10 +2,13 @@
 
 .modal {
   @include mixins.center;
-
-  min-width: 30rem;
   max-width: 90vw;
   max-height: 90vh;
+  min-width: 31rem;
+
+  @include mixins.respond(md-phone) {
+    min-width: 35rem;
+  }
 
   background: white;
   border: none;

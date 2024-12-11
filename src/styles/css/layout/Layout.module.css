@@ -20,22 +20,8 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
-/* .container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, auto);
-
-  @include m.respond(lg-phone) {
-    grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: repeat(3, auto);
-  }
-  @include m.respond(tab-port) {
-    grid-template-columns: 1fr 2.5fr 1fr;
-    grid-template-rows: repeat(2, auto);
-  }
-} */
 .main {
-  background-color: #fafaf7;
+  background: linear-gradient(to bottom, #f8f9fa, #f1f3f5);
 }
 
 /*# sourceMappingURL=Layout.module.css.map */

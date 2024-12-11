@@ -52,6 +52,11 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    a {
+      text-decoration: none;
+      color: #333;
+      cursor: default;
+    }
   }
 
   .title {
@@ -64,8 +69,12 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 2.5rem; // +/- 2 lines of text
-    line-height: 1.2;
+    height: 2.8rem; // +/- 2 lines of text
+
+    cursor: pointer;
+    &:hover {
+      opacity: 0.85;
+    }
   }
 
   .price {

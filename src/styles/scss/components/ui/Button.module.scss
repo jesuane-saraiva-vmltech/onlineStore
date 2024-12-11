@@ -3,7 +3,6 @@
 .button {
   width: 100%;
   padding: 0.75rem;
-  background-color: variables.$color-btn;
   color: white;
   border: none;
   border-radius: 0.4rem;
@@ -11,12 +10,19 @@
   cursor: pointer;
   transition: all 0.2s ease;
 
+  &.light {
+    background-color: variables.$color-btn;
+  }
+  &.dark {
+    background-color: variables.$color-btn-dark;
+  }
+
   &:hover {
     opacity: 0.8;
   }
 
   &.success {
-    background-color: variables.$color-btn-hover; // Set base success color
+    background-color: variables.$color-btn-dark; // Set base success color
     &:hover {
       opacity: 0.8; // Keep consistent hover effect
     }

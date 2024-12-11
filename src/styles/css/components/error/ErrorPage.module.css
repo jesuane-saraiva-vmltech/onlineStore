@@ -1,0 +1,50 @@
+.errorPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #fafaf7;
+}
+.errorPage .content {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+.errorPage .content h1 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+  color: #333;
+}
+.errorPage .content p {
+  margin: 0.5rem 0;
+  color: #666;
+  line-height: 1.6;
+}
+.errorPage .content p.errorMessage {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #fff5f5;
+  border-radius: 4px;
+  color: #e53e3e;
+  font-family: monospace;
+  word-break: break-word;
+}
+.errorPage .content .actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+@media (max-width: 480px) {
+  .errorPage .content .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/*# sourceMappingURL=ErrorPage.module.css.map */

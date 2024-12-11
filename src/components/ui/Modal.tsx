@@ -5,6 +5,7 @@ import { ModalProps } from "../../types/Modal";
 import styles from "../../styles/css/components/ui/Modal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 
 export default function Modal({
   children,
@@ -13,6 +14,7 @@ export default function Modal({
   moduleStyles = "",
 }: ModalProps) {
   const dialog = useRef<HTMLDialogElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const modal = dialog.current;
@@ -24,6 +26,14 @@ export default function Modal({
 
     return () => modal.close();
   }, [open]);
+
+  // handle location change
+  useEffect(() => {
+    if (open) {
+      onClose();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   return createPortal(
     <dialog

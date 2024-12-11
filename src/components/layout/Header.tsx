@@ -35,7 +35,7 @@ const Header = () => {
     CSS won't allow it */}
       <motion.header
         layout
-        transition={{ layout: { duration: 0.2, ease: [0.4, 0, 0.2, 1] } }}
+        transition={{ layout: { duration: 0.2, ease: "anticipate" } }}
         className={styles.header}
         role="banner"
       >

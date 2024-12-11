@@ -7,6 +7,9 @@ import LandingPage from "./pages/LandingPage";
 import ProductListPage from "./pages/ProductListPage";
 import "./styles/css/global.css";
 import { WishlistProvider } from "./context/WishlistContext";
+import ProductPage from "./pages/ProductPage";
+import ErrorBoundary from "./components/error/ErrorBoundary";
+import ErrorPage from "./components/error/ErrorPage";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -23,19 +27,25 @@ const router = createBrowserRouter([
         path: "/products",
         element: <ProductListPage />,
       },
+      {
+        path: "products/:id",
+        element: <ProductPage />,
+      },
     ],
   },
 ]);
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <CartProvider>
-        <WishlistProvider>
-          <RouterProvider router={router} />
-        </WishlistProvider>
-      </CartProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <CartProvider>
+          <WishlistProvider>
+            <RouterProvider router={router} />
+          </WishlistProvider>
+        </CartProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 

@@ -8,8 +8,9 @@
   gap: 0.5rem;
   align-items: center;
   padding: 1rem 2rem;
-  background: white;
+  background-color: variables.$color-bg-primary;
   border-bottom: 0.18rem solid #f0f0f0;
+  min-height: variables.$header-height;
   @include mixins.respond(md-phone) {
     gap: 0;
   }

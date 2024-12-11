@@ -5,6 +5,7 @@ import styles from "../../styles/css/components/wishlist/WishlistProductCard.mod
 import Button from "../ui/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { ButtonColors } from "../../types/Button";
 
 const WishlistProductCard = ({
   product,
@@ -20,7 +21,9 @@ const WishlistProductCard = ({
           </Button>
         </div>
         <div className={styles.button}>
-          <Button onClick={onRemove}>Remove</Button>
+          <Button onClick={onRemove} color={ButtonColors.Dark}>
+            Remove
+          </Button>
         </div>
       </div>
     </BaseProductCard>

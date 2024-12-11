@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "../../styles/css/components/ui/BaseProductCard.module.css";
 import {
   BaseProductCardProps,
@@ -25,7 +26,9 @@ const BaseProductCard = ({
         <img src={product.image} alt={product.title} />
       </div>
       <div className={styles.content}>
-        <h2 className={styles.title}>{product.title}</h2>
+        <Link to={`/products/${product.id}`}>
+          <h2 className={styles.title}>{product.title}</h2>
+        </Link>
         <p className={styles.price}>{formatPrice(product.price)}</p>
         {children}
       </div>

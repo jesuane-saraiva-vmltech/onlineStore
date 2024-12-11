@@ -1,10 +1,17 @@
 import styles from "../../styles/css/components/ui/Button.module.css";
-import { ButtonProps } from "../../types/Button";
+import { ButtonColors, ButtonProps } from "../../types/Button";
 
-const Button = ({ children, isSuccess, ...props }: ButtonProps) => {
+const Button = ({
+  children,
+  isSuccess,
+  color = ButtonColors.Light,
+  ...props
+}: ButtonProps) => {
   return (
     <button
-      className={`${styles.button} ${isSuccess ? styles.success : ""}`}
+      className={`${styles.button} ${isSuccess ? styles.success : ""} ${
+        styles[color]
+      }`}
       {...props}
     >
       {children}

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import ProductCard from "../components/product/Product";
+import ProductCard from "../components/product/ProductCard";
 import styles from "../styles/css/pages/ProductListPage.module.css";
 import { fetchProducts } from "../api/fakeStoreAPI";
 import { useState } from "react";
@@ -12,6 +12,7 @@ const ProductListPage = () => {
   const {
     data: products,
     isLoading,
+    isFetching,
     error,
   } = useQuery({
     queryKey: ["products", sortBy],
@@ -50,7 +51,7 @@ const ProductListPage = () => {
           </select>
         </div>
       </div>
-
+      {isFetching && <LoadingOverlay />}
       <div className={styles.grid}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

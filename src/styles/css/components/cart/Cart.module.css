@@ -1,7 +1,29 @@
+/*
+0 - 600px:      Phone -> is where our normal styles apply
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- lg-phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .cart {
   display: grid;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 1.2rem;
+}
+@media only screen and (min-width: 25em) {
+  .cart {
+    padding: 2rem;
+  }
 }
 .cart .empty {
   text-align: center;
