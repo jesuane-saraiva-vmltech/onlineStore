@@ -8,7 +8,6 @@
   box-sizing: inherit;
 
   &:focus-visible {
-    // Only show outline on keyboard focus
     outline: 1.3rem solid variables.$color-outline !important;
     outline-offset: 0.2rem !important;
   }

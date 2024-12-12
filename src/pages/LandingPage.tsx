@@ -14,9 +14,9 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className={styles.features}>
-        {/* thinking of adding an about us below this?? not sure */}
-      </section>
+      {/*       <section className={styles.features}>
+        TODO: about us section, maybe? 
+      </section> */}
     </div>
   );
 };

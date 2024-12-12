@@ -6,16 +6,16 @@ import { useEffect, useState } from "react";
 import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
 import Button from "../components/ui/Button";
 import { useCart } from "../context/CartContext";
-import { useWishlist } from "../context/WishlistContext";
 import { Product } from "../types/Product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { ButtonColors } from "../types/Button";
+import ErrorPage from "../components/error/ErrorPage";
+import { formatPrice } from "../utils/formatter";
 
 const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
   const { addItem } = useCart();
-  const { isInWishlist, toggleWishlist } = useWishlist();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const navigate = useNavigate();
@@ -43,30 +43,47 @@ const ProductPage = () => {
       return fetchProduct(id);
     },
     enabled: !!id,
+    retry: 2,
   });
 
   if (isLoading) return <LoadingOverlay />;
-  // TEMPORARY:
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <ErrorPage error={error} />;
   if (!product) return null;
 
   return (
-    <div className={styles.productPage}>
+    <main className={styles.productPage} aria-label="Product details">
       <div className={styles.container}>
         <div className={styles.imageSection}>
           <img src={product.image} alt={product.title} />
         </div>
 
         <div className={styles.details}>
-          <h1>{product.title}</h1>
-          <p className={styles.price}>{product.price}€</p>
-          <p className={styles.description}>{product.description}</p>
+          <h2 tabIndex={0} aria-label={`Product: ${product.title}`}>
+            {product.title}
+          </h2>
+          <p
+            className={styles.price}
+            aria-label={`Price: ${formatPrice(product.price)}`}
+            tabIndex={0}
+          >
+            {formatPrice(product.price)}
+          </p>
+          <p
+            className={styles.description}
+            aria-label={`Description: ${product.price}`}
+            tabIndex={0}
+          >
+            {product.description}
+          </p>
 
           <div className={styles.actions}>
             <Button
               onClick={() => handleAddToCart(product)}
               isSuccess={isSuccess}
               disabled={isSuccess}
+              aria-label={
+                isSuccess ? "Product added to cart" : "Add product to cart"
+              }
             >
               {isSuccess ? (
                 "Added!"
@@ -79,13 +96,14 @@ const ProductPage = () => {
             <Button
               color={ButtonColors.Dark}
               onClick={() => navigate("/products")}
+              aria-label="Return to products list"
             >
               Go Back
             </Button>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 export default ProductPage;

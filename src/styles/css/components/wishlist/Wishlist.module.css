@@ -11,5 +11,13 @@
   text-align: center;
   text-transform: uppercase;
 }
+.wishlist .list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.wishlist .list .wishlistItems {
+  list-style-type: none;
+}
 
 /*# sourceMappingURL=Wishlist.module.css.map */

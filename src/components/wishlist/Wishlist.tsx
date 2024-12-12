@@ -16,25 +16,30 @@ const Wishlist = () => {
   };
 
   return (
-    <div className={styles.wishlist}>
-      <h3 className={styles.title}>
+    <section className={styles.wishlist} aria-labelledby="wishlist-heading">
+      <h3 className={styles.title} id="wishlist-heading" tabIndex={0}>
         My Wishlist{" "}
         <span>
-          <FontAwesomeIcon icon={faHeart} />
+          <FontAwesomeIcon icon={faHeart} aria-hidden={true} />
         </span>
       </h3>
       {items.length === 0 && (
-        <h4 className={styles.empty}>Wishlist is empty.</h4>
+        <p className={styles.empty} role="status">
+          Wishlist is empty.
+        </p>
       )}
-      {items.map((item) => (
-        <WishlistProductCard
-          key={item.id}
-          product={item}
-          onMoveToCart={() => moveToCart(item)}
-          onRemove={() => toggleWishlist(item)}
-        />
-      ))}
-    </div>
+      <ul className={styles.list}>
+        {items.map((item) => (
+          <li key={item.id} className={styles.wishlistItems}>
+            <WishlistProductCard
+              product={item}
+              onMoveToCart={() => moveToCart(item)}
+              onRemove={() => toggleWishlist(item)}
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 

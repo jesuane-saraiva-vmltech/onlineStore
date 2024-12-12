@@ -11,4 +11,13 @@
     text-align: center;
     text-transform: uppercase;
   }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .wishlistItems {
+      list-style-type: none;
+    }
+  }
 }

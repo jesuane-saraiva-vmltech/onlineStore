@@ -22,23 +22,41 @@ const CartProductCard = ({
       direction={Direction.Horizontal}
     >
       <div className={styles.container}>
-        <div className={styles.quantity}>
+        <div
+          className={styles.quantity}
+          role="group"
+          aria-label={`Quantity controls for ${cartItem.title}`}
+        >
           <button
             className={styles.updateButton}
             onClick={() => onUpdateQuantity(cartItem.quantity - 1)}
+            aria-label={`Decrease quantity of ${cartItem.title}`}
+            disabled={cartItem.quantity <= 1}
           >
-            <FontAwesomeIcon icon={faMinusCircle} />
+            <FontAwesomeIcon icon={faMinusCircle} aria-hidden="true" />
           </button>
-          <span className={styles.quantityText}>{cartItem.quantity}</span>
+          <span
+            className={styles.quantityText}
+            aria-live="polite"
+            role="status"
+          >
+            {cartItem.quantity}
+          </span>
           <button
             className={styles.updateButton}
             onClick={() => onUpdateQuantity(cartItem.quantity + 1)}
+            aria-label={`Increase quantity of ${cartItem.title}`}
           >
-            <FontAwesomeIcon icon={faPlusCircle} />
+            <FontAwesomeIcon icon={faPlusCircle} aria-hidden="true" />
           </button>
         </div>
         <div>
-          <Button onClick={onRemove}>Remove</Button>
+          <Button
+            onClick={onRemove}
+            aria-label={`Remove ${cartItem.title} from cart`}
+          >
+            Remove
+          </Button>
         </div>
       </div>
     </BaseProductCard>

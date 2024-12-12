@@ -31,22 +31,34 @@ const ProductCard = ({ product }: ProductCardProps) => {
           onClick={() => handleAddToCart(product)}
           isSuccess={isSuccess}
           disabled={isSuccess}
+          aria-label={isSuccess ? "Added to cart" : "Add to cart"}
         >
           {isSuccess ? (
             "Added!"
           ) : (
             <>
-              Add to Cart <FontAwesomeIcon icon={faShoppingCart} />
+              Add to Cart{" "}
+              <FontAwesomeIcon icon={faShoppingCart} aria-hidden={true} />
             </>
           )}
         </Button>
         <button
-          aria-label="Add to wishlist"
+          aria-label={
+            isInWishlist(product.id)
+              ? "Remove from wishlist"
+              : "Add to wishlist"
+          }
           className={styles.wishlistButton}
           onClick={() => toggleWishlist(product)}
+          title={
+            isInWishlist(product.id)
+              ? "Remove from wishlist"
+              : "Add to wishlist"
+          }
         >
           <FontAwesomeIcon
             icon={isInWishlist(product.id) ? faHeartSolid : faHeart}
+            aria-hidden={true}
           />
         </button>
       </div>

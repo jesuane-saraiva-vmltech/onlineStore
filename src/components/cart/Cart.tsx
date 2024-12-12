@@ -8,23 +8,27 @@ const Cart = () => {
   const { items, updateQuantity, removeItem } = useCart();
 
   return (
-    <div className={styles.cart}>
-      <h3 className={styles.title}>
-        My Cart{" "}
-        <span>
-          <FontAwesomeIcon icon={faShoppingCart} />
-        </span>
-      </h3>
-      {items.length === 0 && <h4 className={styles.empty}>Cart is empty.</h4>}
-      {items.map((item) => (
-        <CartProductCard
-          key={item.id}
-          cartItem={item}
-          onUpdateQuantity={(quantity) => updateQuantity(item.id, quantity)}
-          onRemove={() => removeItem(item.id)}
-        />
-      ))}
-    </div>
+    <section className={styles.cart} aria-labelledby="cart-heading">
+      <h2 id="cart-heading" className={styles.title} tabIndex={0}>
+        My Cart <FontAwesomeIcon aria-hidden="true" icon={faShoppingCart} />
+      </h2>
+      {items.length === 0 && (
+        <p role="status" className={styles.cartStatus}>
+          Your shopping cart is empty.
+        </p>
+      )}
+      <ul className={styles.cartList}>
+        {items.map((item) => (
+          <li key={item.id} className={styles.cartItem}>
+            <CartProductCard
+              cartItem={item}
+              onUpdateQuantity={(quantity) => updateQuantity(item.id, quantity)}
+              onRemove={() => removeItem(item.id)}
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 

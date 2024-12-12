@@ -1,6 +1,9 @@
 @use "../abstracts/variables" as variables;
-@use "../abstracts/mixins" as mixins;
 
 .main {
-  background: linear-gradient(to bottom, #f8f9fa, #f1f3f5);
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(variables.$color-accent-primary, 0.05),
+    rgba(variables.$color-accent-secondary, 0.03)
+  );
 }

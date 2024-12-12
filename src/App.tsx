@@ -9,7 +9,6 @@ import "./styles/css/global.css";
 import { WishlistProvider } from "./context/WishlistContext";
 import ProductPage from "./pages/ProductPage";
 import ErrorBoundary from "./components/error/ErrorBoundary";
-import ErrorPage from "./components/error/ErrorPage";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +16,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

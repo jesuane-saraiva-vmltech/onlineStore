@@ -3,7 +3,7 @@ import styles from "../../../styles/css/components/ui/loading/LoadingOverlay.mod
 
 const LoadingOverlay = () => {
   return (
-    <div className={styles.overlay}>
+    <div className={styles.overlay} role="status">
       <LoadingSpinner size="large" />
     </div>
   );

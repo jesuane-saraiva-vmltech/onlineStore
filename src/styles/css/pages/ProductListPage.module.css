@@ -17,6 +17,9 @@ $search-input-padding: 0.8rem;*/
 .plp .header .title {
   font-size: 2rem;
   color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
 }
 .plp .header .controls .sort {
   padding: 0.5rem;
@@ -24,10 +27,13 @@ $search-input-padding: 0.8rem;*/
   border-radius: 0.4rem;
   background: white;
 }
-.plp .grid {
+.plp .list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
   gap: 2rem;
+}
+.plp .list .listItem {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=ProductListPage.module.css.map */

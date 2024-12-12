@@ -10,7 +10,7 @@ const LoadingSpinner = ({
   return (
     <div
       className={`${styles.spinner} ${styles[size]}`}
-      role="status"
+      role="progressbar"
       aria-label="Loading"
     />
   );

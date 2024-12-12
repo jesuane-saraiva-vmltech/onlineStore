@@ -3,25 +3,8 @@
 /* $section-padding-sm: 1rem 2.5rem;
 $button-padding: 1rem;
 $search-input-padding: 0.8rem;*/
-/*
-0 - 600px:      Phone -> is where our normal styles apply
-600 - 900px:    Tablet portrait
-900 - 1200px:   Tablet landscape
-1200 - 1800px:  desktop
-1800px + :      Big desktop
-
-$breakpoint arguement choices:
-- lg-phone
-- tab-port
-- tab-land
-- big-desktop
-
-ORDER: Base + typography > general layout + grid > page layout > components
-
-1em = 16px
-*/
 .main {
-  background: linear-gradient(to bottom, #f8f9fa, #f1f3f5);
+  background-image: linear-gradient(to bottom right, rgba(255, 199, 0, 0.05), rgba(255, 159, 28, 0.03));
 }
 
 /*# sourceMappingURL=Layout.module.css.map */

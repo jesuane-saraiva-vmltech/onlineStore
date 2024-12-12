@@ -6,6 +6,7 @@ import { fetchProducts } from "../api/fakeStoreAPI";
 import { useState } from "react";
 import { Order } from "../types/ProductListingPage";
 import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
+import ErrorPage from "../components/error/ErrorPage";
 
 const ProductListPage = () => {
   const [sortBy, setSortBy] = useState(Order.PriceAsc);
@@ -32,18 +33,20 @@ const ProductListPage = () => {
   });
 
   if (isLoading) return <LoadingOverlay />;
-  // TEMPORARY:
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <ErrorPage error={error} />;
   if (!products) return null;
 
   return (
     <div className={styles.plp}>
       <div className={styles.header}>
-        <h1 className={styles.title}>All Products</h1>
+        <h1 className={styles.title} tabIndex={0}>
+          All Products
+        </h1>
         <div className={styles.controls}>
           <select
             className={styles.sort}
             value={sortBy}
+            aria-label="Sort products by"
             onChange={(e) => setSortBy(e.target.value as Order)}
           >
             <option value={Order.PriceAsc}>Price: Low to High</option>
@@ -52,11 +55,16 @@ const ProductListPage = () => {
         </div>
       </div>
       {isFetching && <LoadingOverlay />}
-      <div className={styles.grid}>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+
+      <main>
+        <ul className={styles.list}>
+          {products.map((product) => (
+            <li key={product.id} className={styles.listItem}>
+              <ProductCard product={product} />
+            </li>
+          ))}
+        </ul>
+      </main>
     </div>
   );
 };

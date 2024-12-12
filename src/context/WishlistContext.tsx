@@ -36,7 +36,6 @@ export const WishlistProvider = ({
   );
 };
 
-// move into hooks file?
 export const useWishlist = (): WishlistContextType => {
   const context = useContext(WishlistContext);
   if (!context)

@@ -16,12 +16,20 @@ const WishlistProductCard = ({
     <BaseProductCard product={product}>
       <div className={styles.container}>
         <div className={styles.button}>
-          <Button onClick={onMoveToCart}>
-            Move to Cart <FontAwesomeIcon icon={faShoppingCart} />
+          <Button
+            onClick={onMoveToCart}
+            aria-label={`Remove ${product.title} from wishlist`}
+          >
+            Move to Cart{" "}
+            <FontAwesomeIcon icon={faShoppingCart} aria-hidden={true} />
           </Button>
         </div>
         <div className={styles.button}>
-          <Button onClick={onRemove} color={ButtonColors.Dark}>
+          <Button
+            onClick={onRemove}
+            color={ButtonColors.Dark}
+            aria-label={`Remove ${product.title} from wishlist`}
+          >
             Remove
           </Button>
         </div>

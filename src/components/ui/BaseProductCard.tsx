@@ -19,20 +19,28 @@ const BaseProductCard = ({
   direction = Direction.Vertical,
 }: BaseProductCardProps) => {
   return (
-    <div className={`${styles.card} ${styles[direction]}`}>
+    <article className={`${styles.card} ${styles[direction]}`}>
       <div
         className={`${styles.imageContainer} ${styles[`image${imageSize}`]}`}
       >
-        <img src={product.image} alt={product.title} />
+        <Link to={`/products/${product.id}`} aria-label="Poduct image">
+          <img src={product.image} alt={product.title} />
+        </Link>
       </div>
       <div className={styles.content}>
         <Link to={`/products/${product.id}`}>
           <h2 className={styles.title}>{product.title}</h2>
         </Link>
-        <p className={styles.price}>{formatPrice(product.price)}</p>
+        <p
+          className={styles.price}
+          aria-label={`Price: ${formatPrice(product.price)}`}
+          tabIndex={0}
+        >
+          {formatPrice(product.price)}
+        </p>
         {children}
       </div>
-    </div>
+    </article>
   );
 };
 

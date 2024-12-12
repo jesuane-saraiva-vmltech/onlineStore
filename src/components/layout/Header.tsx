@@ -24,14 +24,15 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
+
   const toggleModal = (type: ModalType) => {
     setModalType(type);
   };
 
   return (
     <>
-      {/* Using Framer motion's layout prop to automatically animate the header's
-    dimensions // when the nav menu is added or removed from the DOM, since
+      {/* I'm using Framer motion's layout prop to automatically animate the header's
+    dimensions when the nav menu is added or removed from the DOM, since
     CSS won't allow it */}
       <motion.header
         layout
@@ -67,7 +68,7 @@ const Header = () => {
           id="navigation-menu"
           className={`${styles.navigation} ${isMenuOpen ? styles.isOpen : ""}`}
           role="navigation"
-          aria-label="Main navigation"
+          aria-label="Main"
         >
           <ul className={styles.navigationList}>
             <li>
@@ -118,7 +119,13 @@ const Header = () => {
             <span className={styles.icon} aria-hidden>
               <FontAwesomeIcon icon={faShoppingCart} />
             </span>
-            <span id="cart-count" className={styles.count} aria-hidden>
+            <span
+              id="cart-count"
+              className={styles.count}
+              aria-live="polite"
+              aria-atomic={true}
+              aria-label={`${totalCartItems} items in cart`}
+            >
               {totalCartItems}
             </span>
           </button>

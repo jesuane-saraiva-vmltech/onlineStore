@@ -37,6 +37,7 @@ export default function Modal({
 
   return createPortal(
     <dialog
+      aria-modal="true"
       ref={dialog}
       className={`${moduleStyles} ${styles.modal}`}
       onClose={onClose}
