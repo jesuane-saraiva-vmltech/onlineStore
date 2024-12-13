@@ -9,7 +9,10 @@ import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
 import ErrorPage from "../components/error/ErrorPage";
 
 const ProductListPage = () => {
+  // Controls product sort order (price ascending/descending)
   const [sortBy, setSortBy] = useState(Order.PriceAsc);
+
+  // Fetch and manage products data with React Query
   const {
     data: products,
     isLoading,
@@ -18,6 +21,7 @@ const ProductListPage = () => {
   } = useQuery({
     queryKey: ["products", sortBy],
     queryFn: fetchProducts,
+    // Sort fetched products based on selected order
     select: (data) => {
       return [...data].sort((a, b) => {
         switch (sortBy) {
@@ -30,11 +34,15 @@ const ProductListPage = () => {
         }
       });
     },
+    retry: 2, // Retry failed requests twice
   });
 
+  // Handle loading, error, and empty states
   if (isLoading) return <LoadingOverlay />;
   if (error) return <ErrorPage error={error} />;
-  if (!products) return null;
+  if (!products || products.length === 0) {
+    return <ErrorPage error={new Error("Unable to load products.")} />;
+  }
 
   return (
     <div className={styles.plp}>

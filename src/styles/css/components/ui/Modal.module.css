@@ -35,7 +35,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 }
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(0.4rem);
 }
 .modal .closeButton {
   position: absolute;

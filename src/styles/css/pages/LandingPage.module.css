@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
-/* $section-padding-sm: 1rem 2.5rem;
-$button-padding: 1rem;
-$search-input-padding: 0.8rem;*/
 .landing .hero {
   height: calc(100vh - 5rem);
   display: flex;

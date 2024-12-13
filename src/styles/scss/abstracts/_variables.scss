@@ -13,6 +13,7 @@ $color-btn: #f7a800;
 $color-btn-dark: #333;
 $color-btn-disabled: #4f4d51b7;
 $color-outline: rgb(30, 143, 62);
+$default-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
 
 // FONT
 $font-heading: "Barriecito", sans-serif;
@@ -27,11 +28,6 @@ $font-size-sm-secondary: 1.3rem;
 $font-size-md: 1.65rem;
 $font-size-lg: 3rem;
 
-// PADDINGS
-/* $section-padding-sm: 1rem 2.5rem;
-$button-padding: 1rem;
-$search-input-padding: 0.8rem;*/
-
 // DIV HEIGHTS and WIDTHS
 $header-height: 5rem;
 $section-height: calc(100vh - #{$header-height});
@@ -39,5 +35,10 @@ $max-card-width: 35rem;
 $max-container-width: 80vw;
 $max-product-container-width: 70vw;
 
+//PADDINGS
+$default-padding: 2rem;
+$sm-padding: 1.5rem;
+
 // GAPS & MARGINS
 $default-gap: 1rem;
+$md-gap: 2rem;

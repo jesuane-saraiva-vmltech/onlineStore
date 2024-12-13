@@ -1,7 +1,9 @@
+@use "../../abstracts//variables" as variables;
+
 .wishlist {
   display: grid;
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: variables.$sm-padding;
+  padding: variables.$default-padding;
 
   .empty {
     text-align: center;
@@ -14,7 +16,7 @@
   .list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: variables.$default-gap;
 
     .wishlistItems {
       list-style-type: none;

@@ -1,18 +1,21 @@
+@use "../../abstracts/mixins" as mixins;
+@use "../../abstracts//variables" as variables;
+
 .errorPage {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background-color: #fafaf7; // Light off-white background
+  padding: variables.$default-padding;
+  background-color: #fafaf7;
 
   .content {
     text-align: center;
     background: white;
     padding: 3rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    max-width: 50rem;
     width: 100%;
 
     .title {
@@ -32,20 +35,20 @@
         background: #fff5f5;
         border-radius: 4px;
         color: #e53e3e;
-        font-family: monospace; // Better for error messages
-        word-break: break-word; // Handles long error messages
+        font-family: monospace;
+        word-break: break-word;
       }
     }
 
     .actions {
       display: flex;
-      gap: 1rem;
+      flex-direction: column;
       justify-content: center;
+      gap: 0.5rem;
       margin-top: 2rem;
-
-      @media (max-width: 480px) {
-        flex-direction: column;
-        gap: 0.5rem;
+      @include mixins.respond(md-phone) {
+        gap: variables.$default-gap;
+        flex-direction: row;
       }
     }
   }

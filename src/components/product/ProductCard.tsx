@@ -12,16 +12,18 @@ import {
 import { useWishlist } from "../../context/WishlistContext";
 import Button from "../ui/Button";
 import { useState } from "react";
+import { TIMEOUTS } from "../../utils/constants";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // Handle adding product to cart with success feedback
   const handleAddToCart = (product: Product) => {
     addItem(product);
     setIsSuccess(true);
-    setTimeout(() => setIsSuccess(false), 1000);
+    setTimeout(() => setIsSuccess(false), TIMEOUTS.SUCCESS_FEEDBACK);
   };
 
   return (

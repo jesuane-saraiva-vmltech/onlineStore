@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
-/* $section-padding-sm: 1rem 2.5rem;
-$button-padding: 1rem;
-$search-input-padding: 0.8rem;*/
 .content .wishlistButton {
   position: absolute;
   top: 1rem;
@@ -12,7 +9,7 @@ $search-input-padding: 0.8rem;*/
   background: white;
   color: #ffb800;
   font-size: 1.8rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2rem 0.4rem rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 50%;
   display: flex;

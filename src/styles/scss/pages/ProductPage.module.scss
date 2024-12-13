@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as mixins;
 
 .productPage {
-  padding: 2rem;
+  padding: variables.$default-padding;
   max-width: variables.$max-product-container-width;
   min-height: variables.$section-height;
   margin: 0 auto;
@@ -10,11 +10,11 @@
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: variables.$md-gap;
     background: white;
-    padding: 2rem;
+    padding: variables.$default-padding;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: variables.$default-shadow;
 
     @include mixins.respond(tab-port) {
       grid-template-columns: 1fr 1fr;
@@ -39,7 +39,7 @@
   .details {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: variables.$sm-padding;
 
     h1 {
       font-size: 2rem;
@@ -65,7 +65,7 @@
       width: 100%;
       display: flex;
       flex-direction: row;
-      gap: 1.5rem;
+      gap: variables.$sm-padding;
     }
   }
 }

@@ -22,9 +22,9 @@
   }
 
   &.success {
-    background-color: variables.$color-btn-dark; // Set base success color
+    background-color: variables.$color-btn-dark;
     &:hover {
-      opacity: 0.8; // Keep consistent hover effect
+      opacity: 0.8;
     }
   }
 

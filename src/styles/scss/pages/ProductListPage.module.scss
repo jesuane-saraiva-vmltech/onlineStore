@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as variables;
 
 .plp {
-  padding: 2rem;
+  padding: variables.$default-padding;
   max-width: variables.$max-container-width;
   margin: 0 auto;
 
@@ -32,7 +32,7 @@
   .list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
-    gap: 2rem;
+    gap: variables.$md-gap;
 
     .listItem {
       list-style-type: none;

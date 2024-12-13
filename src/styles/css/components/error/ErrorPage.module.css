@@ -1,3 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+/*
+0 - 600px:      Phone -> is where our normal styles apply
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  desktop
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- lg-phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
 .errorPage {
   min-height: 100vh;
   display: flex;
@@ -10,9 +29,9 @@
   text-align: center;
   background: white;
   padding: 3rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+  max-width: 50rem;
   width: 100%;
 }
 .errorPage .content .title {
@@ -36,14 +55,15 @@
 }
 .errorPage .content .actions {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
   justify-content: center;
+  gap: 0.5rem;
   margin-top: 2rem;
 }
-@media (max-width: 480px) {
+@media only screen and (min-width: 25em) {
   .errorPage .content .actions {
-    flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    flex-direction: row;
   }
 }
 

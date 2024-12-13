@@ -12,26 +12,32 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { ButtonColors } from "../types/Button";
 import ErrorPage from "../components/error/ErrorPage";
 import { formatPrice } from "../utils/formatter";
+import { TIMEOUTS } from "../utils/constants";
 
 const ProductPage = () => {
+  // Extract product ID from URL parameters
   const { id } = useParams<{ id: string }>();
   const { addItem } = useCart();
+  // Manages success state for add to cart action
   const [isSuccess, setIsSuccess] = useState(false);
 
   const navigate = useNavigate();
 
+  // Redirect to products page if no ID is provided
   useEffect(() => {
     if (!id) {
       navigate("/products");
     }
   }, [id, navigate]);
 
+  // Handle adding product to cart with success feedback
   const handleAddToCart = (product: Product) => {
     addItem(product);
     setIsSuccess(true);
-    setTimeout(() => setIsSuccess(false), 1000);
+    setTimeout(() => setIsSuccess(false), TIMEOUTS.SUCCESS_FEEDBACK);
   };
 
+  // Fetch product data with React Query
   const {
     data: product,
     isLoading,
@@ -42,13 +48,14 @@ const ProductPage = () => {
       if (!id) throw new Error("Product ID is required");
       return fetchProduct(id);
     },
-    enabled: !!id,
-    retry: 2,
+    enabled: !!id, //Only fetch when ID is available
+    retry: 2, // Retry failed requests twice
   });
 
+  // Handle loading, error, and empty states
   if (isLoading) return <LoadingOverlay />;
   if (error) return <ErrorPage error={error} />;
-  if (!product) return null;
+  if (!product) return <ErrorPage error={new Error("Product not found")} />;
 
   return (
     <main className={styles.productPage} aria-label="Product details">

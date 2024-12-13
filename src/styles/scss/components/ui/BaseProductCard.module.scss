@@ -5,7 +5,7 @@
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: variables.$default-shadow;
   transition: transform 0.2s ease;
   padding: 1rem;
   position: relative;
@@ -13,7 +13,7 @@
   &.horizontal {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 1rem;
+    gap: variables.$default-gap;
   }
   &.vertical {
     display: flex;

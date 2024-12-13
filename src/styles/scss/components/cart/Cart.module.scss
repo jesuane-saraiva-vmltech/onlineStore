@@ -1,11 +1,12 @@
 @use "../../abstracts/mixins" as mixins;
+@use "../../abstracts/variables" as variables;
 
 .cart {
   display: grid;
-  gap: 1.5rem;
+  gap: variables.$sm-padding;
   padding: 1.2rem;
   @include mixins.respond(md-phone) {
-    padding: 2rem;
+    padding: variables.$default-padding;
   }
 
   .cartStatus {
@@ -20,7 +21,7 @@
   .cartList {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: variables.$default-gap;
 
     .cartItem {
       list-style-type: none;

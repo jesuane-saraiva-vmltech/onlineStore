@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
-/* $section-padding-sm: 1rem 2.5rem;
-$button-padding: 1rem;
-$search-input-padding: 0.8rem;*/
 .main {
   background-image: linear-gradient(to bottom right, rgba(255, 199, 0, 0.05), rgba(255, 159, 28, 0.03));
 }
