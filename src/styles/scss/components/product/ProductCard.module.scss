@@ -11,7 +11,7 @@
     background: white;
     color: variables.$color-accent-tertiary;
     font-size: variables.$default-icon-size;
-    box-shadow: 0 2rem 0.4rem rgba(0, 0, 0, 0.1);
+    box-shadow: variables.$default-shadow;
     border: none;
     border-radius: 50%;
 
