@@ -12,7 +12,7 @@ import ErrorBoundary from "./components/error/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,

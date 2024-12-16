@@ -19,9 +19,13 @@ const BaseProductCard = ({
   direction = Direction.Vertical,
 }: BaseProductCardProps) => {
   return (
-    <article className={`${styles.card} ${styles[direction]}`}>
+    <article
+      className={`${styles.card} ${styles[direction]}`}
+      data-testid="container"
+    >
       <div
         className={`${styles.imageContainer} ${styles[`image${imageSize}`]}`}
+        data-testid="image-container"
       >
         <Link to={`/products/${product.id}`} aria-label="Poduct image">
           <img src={product.image} alt={product.title} />
