@@ -14,7 +14,7 @@ describe("BaseProductCard", () => {
   it("renders formatted price correctly", () => {
     renderWithRouter(<BaseProductCard product={mockProduct} />);
 
-    expect(screen.getByText("€99.99")).toBeInTheDocument();
+    expect(screen.getByText(`€${mockProduct.price}`)).toBeInTheDocument();
   });
 
   it("renders product image with correct alt text", () => {

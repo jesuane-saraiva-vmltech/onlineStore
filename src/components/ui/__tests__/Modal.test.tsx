@@ -1,12 +1,17 @@
 import { screen } from "@testing-library/react";
 import Modal from "../Modal";
-
 import { renderWithRouter } from "../../../utils/testUtils";
 import userEvent from "@testing-library/user-event";
-import { setupDialogMocks } from "../../../utils/testSetup";
 
 describe("Modal", () => {
-  setupDialogMocks();
+  beforeAll(() => {
+    HTMLDialogElement.prototype.showModal = jest.fn();
+    HTMLDialogElement.prototype.close = jest.fn();
+  });
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
   it("should render children", () => {
     renderWithRouter(
