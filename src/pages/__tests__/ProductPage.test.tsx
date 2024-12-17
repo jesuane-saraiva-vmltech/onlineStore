@@ -20,7 +20,6 @@ describe("ProductPage", () => {
     (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
     (useParams as jest.Mock).mockReturnValue({ id: "1" });
 
-    // Default mock for useQuery
     (useQuery as jest.Mock).mockReturnValue({
       data: null,
       isLoading: false,
@@ -30,7 +29,6 @@ describe("ProductPage", () => {
 
   it("redirects to products page if no ID is provided", () => {
     (useParams as jest.Mock).mockReturnValue({ id: undefined });
-    // Mock useQuery to return a proper structure when no ID is provided
     (useQuery as jest.Mock).mockReturnValue({
       data: null,
       isLoading: false,
