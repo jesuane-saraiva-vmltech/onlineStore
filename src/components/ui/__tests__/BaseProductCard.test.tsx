@@ -2,21 +2,22 @@ import { screen } from "@testing-library/react";
 import BaseProductCard from "../BaseProductCard";
 import { ImageSize, Direction } from "../../../types/ProductCard";
 import { mockProduct, renderWithRouter } from "../../../utils/testUtils";
+import styles from "../../../styles/css/components/ui/BaseProductCard.module.css";
 
 describe("BaseProductCard", () => {
-  test("renders product title", () => {
+  it("renders product title", () => {
     renderWithRouter(<BaseProductCard product={mockProduct} />);
 
     expect(screen.getByText(mockProduct.title)).toBeInTheDocument();
   });
 
-  test("renders formatted price correctly", () => {
+  it("renders formatted price correctly", () => {
     renderWithRouter(<BaseProductCard product={mockProduct} />);
 
     expect(screen.getByText("€99.99")).toBeInTheDocument();
   });
 
-  test("renders product image with correct alt text", () => {
+  it("renders product image with correct alt text", () => {
     renderWithRouter(<BaseProductCard product={mockProduct} />);
 
     const image = screen.getByRole("img");
@@ -24,7 +25,7 @@ describe("BaseProductCard", () => {
     expect(image).toHaveAttribute("alt", "Test Product");
   });
 
-  test("renders children content", () => {
+  it("renders children content", () => {
     renderWithRouter(
       <BaseProductCard product={mockProduct}>
         <div>Test Child Content</div>
@@ -34,7 +35,7 @@ describe("BaseProductCard", () => {
     expect(screen.getByText("Test Child Content")).toBeInTheDocument();
   });
 
-  test("links to correct product page", () => {
+  it("links to correct product page", () => {
     renderWithRouter(
       <BaseProductCard product={mockProduct}>
         <div>Child content</div>
@@ -47,7 +48,7 @@ describe("BaseProductCard", () => {
     });
   });
 
-  test("applies correct image size class", () => {
+  it("applies correct image size class", () => {
     renderWithRouter(
       <BaseProductCard product={mockProduct} imageSize={ImageSize.Large}>
         <div>Child content</div>
@@ -55,10 +56,10 @@ describe("BaseProductCard", () => {
     );
 
     const imageContainer = screen.getByTestId("image-container");
-    expect(imageContainer).toHaveClass("imageLarge");
+    expect(imageContainer).toHaveClass(styles.imageLarge);
   });
 
-  test("applies correct direction class", () => {
+  it("applies correct direction class", () => {
     renderWithRouter(
       <BaseProductCard product={mockProduct} direction={Direction.Horizontal}>
         <div>Child content</div>
@@ -66,7 +67,7 @@ describe("BaseProductCard", () => {
     );
 
     const imageContainer = screen.getByTestId("container");
-    expect(imageContainer).toHaveClass("horizontal");
+    expect(imageContainer).toHaveClass(styles.horizontal);
   });
 
   test("uses default image size when not specified", () => {
@@ -77,7 +78,7 @@ describe("BaseProductCard", () => {
     );
 
     const imageContainer = screen.getByTestId("image-container");
-    expect(imageContainer).toHaveClass("imageMedium");
+    expect(imageContainer).toHaveClass(styles.imageMedium);
   });
 
   test("uses default direction when not specified", () => {
@@ -88,11 +89,11 @@ describe("BaseProductCard", () => {
     );
 
     const imageContainer = screen.getByTestId("container");
-    expect(imageContainer).toHaveClass("vertical");
+    expect(imageContainer).toHaveClass(styles.vertical);
   });
 
   // Accessibility tests
-  test("has accessible price information", () => {
+  it("has accessible price information", () => {
     renderWithRouter(
       <BaseProductCard product={mockProduct}>
         <div>Child content</div>
@@ -105,7 +106,7 @@ describe("BaseProductCard", () => {
     );
   });
 
-  test("has accessible product image link", () => {
+  it("has accessible product image link", () => {
     renderWithRouter(
       <BaseProductCard product={mockProduct}>
         <div>Child content</div>

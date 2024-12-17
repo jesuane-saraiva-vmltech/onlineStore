@@ -3,18 +3,10 @@ import Modal from "../Modal";
 
 import { renderWithRouter } from "../../../utils/testUtils";
 import userEvent from "@testing-library/user-event";
+import { setupDialogMocks } from "../../../utils/testSetup";
 
 describe("Modal", () => {
-  beforeAll(() => {
-    // Mocking the HTMLDialogElement methods because jsdom doesn't fully support the dialog element :')
-    HTMLDialogElement.prototype.showModal = jest.fn();
-    HTMLDialogElement.prototype.close = jest.fn();
-  });
-
-  beforeEach(() => {
-    // Clear mock calls between tests
-    jest.clearAllMocks();
-  });
+  setupDialogMocks();
 
   it("should render children", () => {
     renderWithRouter(
