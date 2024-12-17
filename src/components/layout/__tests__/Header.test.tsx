@@ -2,14 +2,20 @@ import { screen, fireEvent } from "@testing-library/react";
 import { mockFramerMotion, renderWithRouter } from "../../../utils/testUtils";
 import Header from "../Header";
 import styles from "../../styles/css/layout/Header.module.css";
-import { setupDialogMocks } from "../../../utils/testSetup";
 
 jest.mock("motion/react", () => mockFramerMotion);
 jest.mock("../../cart/Cart", () => () => <div>Cart Content</div>);
 jest.mock("../../wishlist/Wishlist", () => () => <div>Wishlist Content</div>);
 
 describe("Header", () => {
-  setupDialogMocks();
+  beforeAll(() => {
+    HTMLDialogElement.prototype.showModal = jest.fn();
+    HTMLDialogElement.prototype.close = jest.fn();
+  });
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
   it("should render the logo with correct link", () => {
     renderWithRouter(<Header />);
