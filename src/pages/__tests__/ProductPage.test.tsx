@@ -1,8 +1,10 @@
-import { screen, fireEvent, act } from "@testing-library/react";
-import { renderWithRouter, mockProduct } from "../../utils/testUtils";
-import ProductPage from "../ProductPage";
-import { useQuery } from "@tanstack/react-query";
 import { useParams, useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { screen, fireEvent, act } from "@testing-library/react";
+
+import ProductPage from "../ProductPage";
+
+import { renderWithRouter, mockProduct } from "../../utils/testUtils";
 
 // Mock the hooks
 jest.mock("@tanstack/react-query");

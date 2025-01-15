@@ -1,5 +1,7 @@
 import { screen, fireEvent } from "@testing-library/react";
+
 import CartProductCard from "../CartProductCard";
+
 import { renderWithRouter, mockCartItems } from "../../../utils/testUtils";
 
 describe("CartProductCard", () => {

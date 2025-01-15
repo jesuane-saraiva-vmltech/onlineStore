@@ -1,4 +1,5 @@
 import LoadingSpinner from "./LoadingSpinner";
+
 import styles from "../../../styles/css/components/ui/loading/LoadingOverlay.module.css";
 
 const LoadingOverlay = ({ ...props }) => {

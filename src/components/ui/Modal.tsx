@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-
-import { ModalProps } from "../../types/Modal";
-import styles from "../../styles/css/components/ui/Modal.module.css";
+import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useLocation } from "react-router-dom";
+
+import { ModalProps } from "../../types/Modal";
+
+import styles from "../../styles/css/components/ui/Modal.module.css";
 
 export default function Modal({
   children,

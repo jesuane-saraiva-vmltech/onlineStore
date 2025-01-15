@@ -1,9 +1,13 @@
 import { screen } from "@testing-library/react";
 import { render } from "@testing-library/react";
+
 import Wishlist from "../Wishlist";
+
 import { Product } from "../../../types/Product";
-import styles from "../../../styles/css/components/wishlist/Wishlist.module.css";
+
 import { mockCartItems as mockItems } from "../../../utils/testUtils";
+
+import styles from "../../../styles/css/components/wishlist/Wishlist.module.css";
 
 // Mock the WishlistContext
 jest.mock("../../../context/WishlistContext", () => ({

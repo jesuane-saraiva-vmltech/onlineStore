@@ -1,18 +1,23 @@
-import { useNavigate, useParams } from "react-router-dom";
-import styles from "../styles/css/pages/ProductPage.module.css";
-import { useQuery } from "@tanstack/react-query";
-import { fetchProduct } from "../api/fakeStoreAPI";
 import { useEffect, useState } from "react";
-import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
-import Button from "../components/ui/Button";
-import { useCart } from "../context/CartContext";
-import { Product } from "../types/Product";
+import { useNavigate, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { ButtonColors } from "../types/Button";
+
+import { useCart } from "../context/CartContext";
+
+import { fetchProduct } from "../api/fakeStoreAPI";
+import Button from "../components/ui/Button";
 import ErrorPage from "../components/error/ErrorPage";
+import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
+
+import { ButtonColors } from "../types/Button";
+import { Product } from "../types/Product";
+
 import { formatPrice } from "../utils/formatter";
 import { TIMEOUTS } from "../utils/constants";
+
+import styles from "../styles/css/pages/ProductPage.module.css";
 
 const ProductPage = () => {
   // Extract product ID from URL parameters

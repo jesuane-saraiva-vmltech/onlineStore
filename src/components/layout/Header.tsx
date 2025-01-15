@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { motion } from "motion/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -5,16 +8,16 @@ import {
   faShoppingCart,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "motion/react";
 
 import { useCart } from "../../context/CartContext";
-import styles from "../../styles/css/layout/Header.module.css";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import { ModalType } from "../../types/Modal";
-import Modal from "../ui/Modal";
+
 import Cart from "../cart/Cart";
+import Modal from "../ui/Modal";
 import Wishlist from "../wishlist/Wishlist";
+
+import { ModalType } from "../../types/Modal";
+
+import styles from "../../styles/css/layout/Header.module.css";
 
 const Header = () => {
   const { totalQuantity: totalCartItems } = useCart();

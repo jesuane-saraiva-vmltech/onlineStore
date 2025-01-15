@@ -1,6 +1,9 @@
 import { render, screen } from "@testing-library/react";
+
 import LoadingSpinner from "../LoadingSpinner";
+
 import { LoadingSpinnerSize } from "../../../../types/LoadingSpinner";
+
 import styles from "../../../styles/css/components/ui/loading/LoadingSpinner.module.css";
 
 describe("LoadingSpinner", () => {

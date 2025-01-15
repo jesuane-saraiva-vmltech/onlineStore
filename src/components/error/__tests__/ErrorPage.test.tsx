@@ -1,7 +1,9 @@
-import { screen, fireEvent } from "@testing-library/react";
-import { renderWithRouter } from "../../../utils/testUtils";
-import ErrorPage from "../ErrorPage";
 import { useNavigate } from "react-router-dom";
+import { screen, fireEvent } from "@testing-library/react";
+
+import ErrorPage from "../ErrorPage";
+
+import { renderWithRouter } from "../../../utils/testUtils";
 
 // Mock useNavigate
 jest.mock("react-router-dom", () => ({

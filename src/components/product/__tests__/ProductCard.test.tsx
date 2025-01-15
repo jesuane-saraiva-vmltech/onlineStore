@@ -1,7 +1,9 @@
 import { screen, fireEvent, act } from "@testing-library/react";
+
 import ProductCard from "../ProductCard";
-import { renderWithRouter, mockProduct } from "../../../utils/testUtils";
+
 import { TIMEOUTS } from "../../../utils/constants";
+import { renderWithRouter, mockProduct } from "../../../utils/testUtils";
 
 describe("ProductCard", () => {
   beforeEach(() => {

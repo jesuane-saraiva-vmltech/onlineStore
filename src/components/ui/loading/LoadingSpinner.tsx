@@ -1,4 +1,5 @@
 import styles from "../../../styles/css/components/ui/loading/LoadingSpinner.module.css";
+
 import {
   LoadingSpinnerProps,
   LoadingSpinnerSize,

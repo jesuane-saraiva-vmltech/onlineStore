@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
-import { WishlistContextType } from "../types/Wishlist";
+
 import { Product } from "../types/Product";
+import { WishlistContextType } from "../types/Wishlist";
 
 const WishlistContext = createContext<WishlistContextType | undefined>(
   undefined

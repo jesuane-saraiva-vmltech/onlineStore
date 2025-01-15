@@ -1,7 +1,11 @@
 import { screen } from "@testing-library/react";
+
 import BaseProductCard from "../BaseProductCard";
+
 import { ImageSize, Direction } from "../../../types/ProductCard";
+
 import { mockProduct, renderWithRouter } from "../../../utils/testUtils";
+
 import styles from "../../../styles/css/components/ui/BaseProductCard.module.css";
 
 describe("BaseProductCard", () => {

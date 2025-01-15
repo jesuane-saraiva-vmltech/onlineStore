@@ -1,6 +1,9 @@
 import { screen, fireEvent } from "@testing-library/react";
-import { mockFramerMotion, renderWithRouter } from "../../../utils/testUtils";
+
 import Header from "../Header";
+
+import { mockFramerMotion, renderWithRouter } from "../../../utils/testUtils";
+
 import styles from "../../styles/css/layout/Header.module.css";
 
 jest.mock("motion/react", () => mockFramerMotion);

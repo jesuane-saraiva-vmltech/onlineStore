@@ -1,7 +1,10 @@
-import { screen, fireEvent } from "@testing-library/react";
-import { renderWithRouter, mockProduct } from "../../utils/testUtils";
-import ProductListPage from "../ProductListPage";
 import { useQuery } from "@tanstack/react-query";
+import { screen, fireEvent } from "@testing-library/react";
+
+import ProductListPage from "../ProductListPage";
+
+import { renderWithRouter, mockProduct } from "../../utils/testUtils";
+
 import { Order } from "../../types/ProductListingPage";
 
 // Mock the react-query hook

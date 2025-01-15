@@ -1,7 +1,9 @@
 import { screen } from "@testing-library/react";
-import Modal from "../Modal";
-import { renderWithRouter } from "../../../utils/testUtils";
 import userEvent from "@testing-library/user-event";
+
+import Modal from "../Modal";
+
+import { renderWithRouter } from "../../../utils/testUtils";
 
 describe("Modal", () => {
   beforeAll(() => {

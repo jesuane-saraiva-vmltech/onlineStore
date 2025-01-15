@@ -1,18 +1,22 @@
-import { useCart } from "../../context/CartContext";
-import { Product, ProductCardProps } from "../../types/Product";
-
-import styles from "../../styles/css/components/product/ProductCard.module.css";
-import BaseProductCard from "../ui/BaseProductCard";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import {
   faHeart as faHeartSolid,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
+
+import { Product, ProductCardProps } from "../../types/Product";
+
+import BaseProductCard from "../ui/BaseProductCard";
 import Button from "../ui/Button";
-import { useState } from "react";
+
 import { TIMEOUTS } from "../../utils/constants";
+
+import styles from "../../styles/css/components/product/ProductCard.module.css";
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { addItem } = useCart();

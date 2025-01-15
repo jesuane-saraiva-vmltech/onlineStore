@@ -1,5 +1,6 @@
-import styles from "../../styles/css/components/ui/Button.module.css";
 import { ButtonColors, ButtonProps } from "../../types/Button";
+
+import styles from "../../styles/css/components/ui/Button.module.css";
 
 const Button = ({
   children,

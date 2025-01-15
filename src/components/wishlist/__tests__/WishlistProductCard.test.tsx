@@ -1,6 +1,8 @@
 import { screen, fireEvent } from "@testing-library/react";
-import { renderWithRouter, mockProduct } from "../../../utils/testUtils";
+
 import WishlistProductCard from "../WishlistProductCard";
+
+import { renderWithRouter, mockProduct } from "../../../utils/testUtils";
 
 describe("WishlistProductCard", () => {
   const mockOnMoveToCart = jest.fn();

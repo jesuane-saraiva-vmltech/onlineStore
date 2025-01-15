@@ -1,12 +1,14 @@
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import ProductCard from "../components/product/ProductCard";
-import styles from "../styles/css/pages/ProductListPage.module.css";
 import { fetchProducts } from "../api/fakeStoreAPI";
-import { useState } from "react";
-import { Order } from "../types/ProductListingPage";
-import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
 import ErrorPage from "../components/error/ErrorPage";
+import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
+import ProductCard from "../components/product/ProductCard";
+
+import { Order } from "../types/ProductListingPage";
+
+import styles from "../styles/css/pages/ProductListPage.module.css";
 
 const ProductListPage = () => {
   // Controls product sort order (price ascending/descending)

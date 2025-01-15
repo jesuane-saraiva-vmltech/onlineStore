@@ -1,6 +1,8 @@
 import { screen } from "@testing-library/react";
-import { renderWithRouter } from "../../utils/testUtils";
+
 import LandingPage from "../LandingPage";
+
+import { renderWithRouter } from "../../utils/testUtils";
 
 describe("LandingPage", () => {
   it("renders main heading", () => {

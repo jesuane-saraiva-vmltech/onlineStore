@@ -1,10 +1,14 @@
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { useWishlist } from "../../context/WishlistContext";
-import styles from "../../styles/css/components/wishlist/Wishlist.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import WishlistProductCard from "./WishlistProductCard";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+
 import { useCart } from "../../context/CartContext";
+import { useWishlist } from "../../context/WishlistContext";
+
+import WishlistProductCard from "./WishlistProductCard";
+
 import { Product } from "../../types/Product";
+
+import styles from "../../styles/css/components/wishlist/Wishlist.module.css";
 
 const Wishlist = () => {
   const { items, toggleWishlist } = useWishlist();

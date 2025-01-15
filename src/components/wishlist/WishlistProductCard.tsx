@@ -1,11 +1,14 @@
-import { WishlistProductCardProps } from "../../types/ProductCard";
-import BaseProductCard from "../ui/BaseProductCard";
-
-import styles from "../../styles/css/components/wishlist/WishlistProductCard.module.css";
-import Button from "../ui/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+
+import BaseProductCard from "../ui/BaseProductCard";
+
 import { ButtonColors } from "../../types/Button";
+import { WishlistProductCardProps } from "../../types/ProductCard";
+
+import Button from "../ui/Button";
+
+import styles from "../../styles/css/components/wishlist/WishlistProductCard.module.css";
 
 const WishlistProductCard = ({
   product,

@@ -1,9 +1,13 @@
 import { screen } from "@testing-library/react";
 import { render } from "@testing-library/react";
+
 import Cart from "../Cart";
+
 import { CartItem } from "../../../types/Cart";
-import styles from "../../../styles/css/components/cart/Cart.module.css";
+
 import { mockCartItems } from "../../../utils/testUtils";
+
+import styles from "../../../styles/css/components/cart/Cart.module.css";
 
 // Mock the CartContext
 jest.mock("../../../context/CartContext", () => ({

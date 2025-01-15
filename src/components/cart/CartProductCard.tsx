@@ -1,14 +1,16 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+
+import BaseProductCard from "../ui/BaseProductCard";
+import Button from "../ui/Button";
+
 import {
   CartProductCardProps,
   Direction,
   ImageSize,
 } from "../../types/ProductCard";
-import BaseProductCard from "../ui/BaseProductCard";
 
 import styles from "../../styles/css/components/cart/CartProductCard.module.css";
-import Button from "../ui/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 
 const CartProductCard = ({
   cartItem,
