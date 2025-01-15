@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchProducts } from "../api/fakeStoreAPI";
+import { fetchAllProducts } from "../api/fakeStoreAPI";
 import ErrorPage from "../components/error/ErrorPage";
 import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
 import ProductCard from "../components/product/ProductCard";
@@ -22,7 +22,7 @@ const ProductListPage = () => {
     error,
   } = useQuery({
     queryKey: ["products"],
-    queryFn: fetchProducts,
+    queryFn: fetchAllProducts,
     staleTime: 5 * 60 * 1000, // keep cache for 5 min
     retry: 2, // Retry failed requests twice
   });

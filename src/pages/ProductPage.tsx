@@ -6,7 +6,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import { useCart } from "../context/CartContext";
 
-import { fetchProduct } from "../api/fakeStoreAPI";
+import { fetchAllProducts } from "../api/fakeStoreAPI";
 import Button from "../components/ui/Button";
 import ErrorPage from "../components/error/ErrorPage";
 import LoadingOverlay from "../components/ui/loading/LoadingOverlay";
@@ -42,20 +42,19 @@ const ProductPage = () => {
     setTimeout(() => setIsSuccess(false), TIMEOUTS.SUCCESS_FEEDBACK);
   };
 
-  // Fetch product data with React Query
+  // Fetch all products once
   const {
-    data: product,
+    data: products,
     isLoading,
     error,
   } = useQuery({
-    queryKey: ["product", id],
-    queryFn: () => {
-      if (!id) throw new Error("Product ID is required");
-      return fetchProduct(id);
-    },
-    enabled: !!id, //Only fetch when ID is available
-    retry: 2, // Retry failed requests twice
+    queryKey: ["products"],
+    queryFn: fetchAllProducts,
+    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
   });
+
+  // Find the specific product from the products array
+  const product = products?.find((p) => p.id.toString() === id);
 
   // Handle loading, error, and empty states
   if (isLoading) return <LoadingOverlay />;

@@ -90,6 +90,8 @@ export const fetchProduct = async (id: string): Promise<Product> => {
 };
 ```
 
+(EVEN BETTER IS TO CHECK CACHED ALLPRODUCTS INSTEAD OF ANOTHER API REQUEST TO GET A SINGLE PRODUCT)
+
 # TESTING:
 
 - test files should be `.spec.ts` not `.test.ts` - this is the modern way of writing tests now

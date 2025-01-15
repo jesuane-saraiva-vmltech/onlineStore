@@ -1,26 +1,28 @@
 import { Product } from "../types/Product";
-import { API_URL, fetchData } from "../utils/api";
 
-export const fetchProducts = async (): Promise<Product[]> => {
+const API_URL = "https://fakestoreapi.com";
+
+export const fetchFromApi = async <T>(endpoint: string): Promise<T> => {
   try {
-    const data = await fetchData(`${API_URL}/products`);
+    const response = await fetch(`${API_URL}${endpoint}`);
+
+    if (!response.ok) {
+      throw new Error(`Network response was not ok for endpoint: ${endpoint}`);
+    }
+
+    const data: T = await response.json();
     return data;
   } catch (error) {
     if (error instanceof Error) {
-      throw error;
+      throw new Error(
+        `Failed to fetch data from ${endpoint}: ${error.message}`
+      );
     } else {
-      throw new Error("Failed to fetch products.");
+      throw new Error(`Failed to fetch data from ${endpoint}.`);
     }
   }
 };
 
-export const fetchProduct = async (id: string): Promise<Product> => {
-  try {
-    const data = await fetchData(`${API_URL}/products/${id}`);
-    return data;
-  } catch (error) {
-    // the API returns status 200 even if the product doesn't exist
-    console.error(error);
-    throw new Error(`Failed to fetch product with ID ${id}`);
-  }
+export const fetchAllProducts = async (): Promise<Product[]> => {
+  return fetchFromApi<Product[]>("/products");
 };
