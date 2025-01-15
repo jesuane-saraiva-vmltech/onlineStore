@@ -14,10 +14,6 @@ const LandingPage = () => {
           </Link>
         </div>
       </section>
-
-      {/*       <section className={styles.features}>
-        TODO: about us section, maybe? 
-      </section> */}
     </div>
   );
 };

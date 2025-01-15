@@ -30,7 +30,7 @@ const BaseProductCard = ({
         data-testid="image-container"
       >
         <Link to={`/products/${product.id}`} aria-label="Poduct image">
-          <img src={product.image} alt={product.title} />
+          <img src={product.image} alt={product.title} loading="lazy" />
         </Link>
       </div>
       <div className={styles.content}>

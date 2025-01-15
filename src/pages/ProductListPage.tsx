@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchProducts } from "../api/fakeStoreAPI";
@@ -16,28 +16,31 @@ const ProductListPage = () => {
 
   // Fetch and manage products data with React Query
   const {
-    data: products,
+    data: unsortedProducts,
     isLoading,
     isFetching,
     error,
   } = useQuery({
-    queryKey: ["products", sortBy],
+    queryKey: ["products"],
     queryFn: fetchProducts,
-    // Sort fetched products based on selected order
-    select: (data) => {
-      return [...data].sort((a, b) => {
-        switch (sortBy) {
-          case Order.PriceAsc:
-            return a.price - b.price;
-          case Order.PriceDesc:
-            return b.price - a.price;
-          default:
-            return 0;
-        }
-      });
-    },
+    staleTime: 5 * 60 * 1000, // keep cache for 5 min
     retry: 2, // Retry failed requests twice
   });
+
+  // Sort fetched products based on selected order on the client-side
+  const products = useMemo(() => {
+    if (!unsortedProducts) return []; // Handle undefined case
+    return [...unsortedProducts].sort((a, b) => {
+      switch (sortBy) {
+        case Order.PriceAsc:
+          return a.price - b.price;
+        case Order.PriceDesc:
+          return b.price - a.price;
+        default:
+          return 0;
+      }
+    });
+  }, [unsortedProducts, sortBy]); // Only re-sort when unsortedProducts or sortBy changes
 
   // Handle loading, error, and empty states
   if (isLoading) return <LoadingOverlay />;

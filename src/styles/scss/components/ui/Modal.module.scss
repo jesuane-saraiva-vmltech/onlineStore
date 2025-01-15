@@ -5,15 +5,14 @@
   max-width: 90vw;
   max-height: 90vh;
   min-width: 31rem;
-
-  @include mixins.respond(md-phone) {
-    min-width: 35rem;
-  }
-
   background: white;
   border: none;
   border-radius: 0.8rem;
   box-shadow: 0 0.5rem 0.24rem rgba(0, 0, 0, 0.12);
+
+  @include mixins.respond(md-phone) {
+    min-width: 35rem;
+  }
 
   &::backdrop {
     background: rgba(0, 0, 0, 0.5);

@@ -57,7 +57,7 @@ const Header = () => {
         </button>
 
         <div className={styles.logo}>
-          <h1 className={styles.title}>
+          <h2 className={styles.title}>
             <NavLink
               to="/"
               aria-label="YouGift homepage"
@@ -65,7 +65,7 @@ const Header = () => {
             >
               YouGift
             </NavLink>
-          </h1>
+          </h2>
         </div>
         <nav
           id="navigation-menu"
