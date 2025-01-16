@@ -23,7 +23,7 @@ describe("ProductPage", () => {
     (useParams as jest.Mock).mockReturnValue({ id: "1" });
 
     (useQuery as jest.Mock).mockReturnValue({
-      data: null,
+      data: [],
       isLoading: false,
       error: null,
     });
@@ -68,7 +68,7 @@ describe("ProductPage", () => {
     (useQuery as jest.Mock).mockReturnValue({
       isLoading: false,
       error: null,
-      data: mockProduct,
+      data: [mockProduct],
     });
 
     renderWithRouter(<ProductPage />);
@@ -83,7 +83,7 @@ describe("ProductPage", () => {
     (useQuery as jest.Mock).mockReturnValue({
       isLoading: false,
       error: null,
-      data: mockProduct,
+      data: [mockProduct],
     });
 
     renderWithRouter(<ProductPage />);
@@ -99,7 +99,7 @@ describe("ProductPage", () => {
     (useQuery as jest.Mock).mockReturnValue({
       isLoading: false,
       error: null,
-      data: mockProduct,
+      data: [mockProduct],
     });
 
     renderWithRouter(<ProductPage />);
@@ -116,7 +116,7 @@ describe("ProductPage", () => {
     (useQuery as jest.Mock).mockReturnValue({
       isLoading: false,
       error: null,
-      data: mockProduct,
+      data: [mockProduct],
     });
 
     renderWithRouter(<ProductPage />);

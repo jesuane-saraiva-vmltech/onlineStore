@@ -6,11 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
 
-  &:focus-visible {
-    outline: 1.3rem solid variables.$color-outline !important;
-    outline-offset: 0.2rem !important;
-  }
+:focus-visible {
+  outline: 1.3rem solid variables.$color-outline;
+  outline-offset: 0.15rem;
 }
 
 html {
@@ -18,7 +18,7 @@ html {
   font-size: 62.5%; //1 rem = 10px because 16px (default font size set by browsers) so 10px/16px= 62.5%
 
   @include mixins.respond(md-phone) {
-    // 600px+
+    // 400px+
     font-size: 68.75%; //1 rem->11px, 11/16 = 68.75%
   }
 

@@ -2,11 +2,19 @@ import { screen, fireEvent } from "@testing-library/react";
 
 import Header from "../Header";
 
-import { mockFramerMotion, renderWithRouter } from "../../../utils/testUtils";
+import { renderWithRouter } from "../../../utils/testUtils";
 
 import styles from "../../styles/css/layout/Header.module.css";
 
-jest.mock("motion/react", () => mockFramerMotion);
+jest.mock("motion/react", () => ({
+  motion: {
+    header: ({ children, layout, transition, ...props }: any) => (
+      <header data-testid="motion-header" {...props}>
+        {children}
+      </header>
+    ),
+  },
+}));
 jest.mock("../../cart/Cart", () => () => <div>Cart Content</div>);
 jest.mock("../../wishlist/Wishlist", () => () => <div>Wishlist Content</div>);
 

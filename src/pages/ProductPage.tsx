@@ -50,7 +50,7 @@ const ProductPage = () => {
   } = useQuery({
     queryKey: ["products"],
     queryFn: fetchAllProducts,
-    staleTime: 5 * 60 * 1000, // Cache for 5 minutes
+    staleTime: 5 * 60 * 1000, //   Cache for 5 minutes
   });
 
   // Find the specific product from the products array

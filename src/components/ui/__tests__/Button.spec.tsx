@@ -13,6 +13,8 @@ jest.mock("../../styles/css/components/ui/Button.module.css", () => ({
   dark: "dark",
 }));
 
+const user = userEvent.setup();
+
 describe("Button Component", () => {
   it("renders children correctly", () => {
     render(<Button>Click me</Button>);
@@ -42,7 +44,7 @@ describe("Button Component", () => {
     const handleClick = jest.fn();
     render(<Button onClick={handleClick}>Click me</Button>);
 
-    await userEvent.click(screen.getByRole("button"));
+    await user.click(screen.getByRole("button"));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 

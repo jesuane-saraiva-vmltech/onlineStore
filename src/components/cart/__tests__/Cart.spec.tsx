@@ -1,20 +1,13 @@
 import { screen } from "@testing-library/react";
 import { render } from "@testing-library/react";
-
+import { useCart } from "../../../context/CartContext";
 import Cart from "../Cart";
-
 import { CartItem } from "../../../types/Cart";
-
 import { mockCartItems } from "../../../utils/testUtils";
-
 import styles from "../../../styles/css/components/cart/Cart.module.css";
 
-// Mock the CartContext
-jest.mock("../../../context/CartContext", () => ({
-  useCart: jest.fn(),
-}));
-
-// Mock the CartProductCard component
+// Mock the hooks and components
+jest.mock("../../../context/CartContext");
 jest.mock("../CartProductCard", () => {
   return function MockCartProductCard({
     cartItem,
@@ -35,16 +28,16 @@ jest.mock("../CartProductCard", () => {
   };
 });
 
-const mockUpdateQuantity = jest.fn();
-const mockRemoveItem = jest.fn();
-
 describe("Cart", () => {
+  const mockUpdateQuantity = jest.fn();
+  const mockRemoveItem = jest.fn();
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
 
   it("should render cart title", () => {
-    (require("../../../context/CartContext") as any).useCart.mockReturnValue({
+    (useCart as jest.Mock).mockReturnValue({
       items: [],
       updateQuantity: mockUpdateQuantity,
       removeItem: mockRemoveItem,
@@ -58,7 +51,7 @@ describe("Cart", () => {
   });
 
   it("should display empty cart message when there are no items", () => {
-    (require("../../../context/CartContext") as any).useCart.mockReturnValue({
+    (useCart as jest.Mock).mockReturnValue({
       items: [],
       updateQuantity: mockUpdateQuantity,
       removeItem: mockRemoveItem,
@@ -72,7 +65,7 @@ describe("Cart", () => {
   });
 
   it("should render cart items when they exist", () => {
-    (require("../../../context/CartContext") as any).useCart.mockReturnValue({
+    (useCart as jest.Mock).mockReturnValue({
       items: mockCartItems,
       updateQuantity: mockUpdateQuantity,
       removeItem: mockRemoveItem,
@@ -87,7 +80,7 @@ describe("Cart", () => {
   });
 
   it("should call updateQuantity when quantity is updated", () => {
-    require("../../../context/CartContext").useCart.mockReturnValue({
+    (useCart as jest.Mock).mockReturnValue({
       items: mockCartItems,
       updateQuantity: mockUpdateQuantity,
       removeItem: mockRemoveItem,
@@ -102,7 +95,7 @@ describe("Cart", () => {
   });
 
   it("should call removeItem when remove button is clicked", () => {
-    require("../../../context/CartContext").useCart.mockReturnValue({
+    (useCart as jest.Mock).mockReturnValue({
       items: mockCartItems,
       updateQuantity: mockUpdateQuantity,
       removeItem: mockRemoveItem,
@@ -118,7 +111,7 @@ describe("Cart", () => {
 
   describe("Accessibility", () => {
     it("should have correct ARIA attributes", () => {
-      (require("../../../context/CartContext") as any).useCart.mockReturnValue({
+      (useCart as jest.Mock).mockReturnValue({
         items: [],
         updateQuantity: mockUpdateQuantity,
         removeItem: mockRemoveItem,
@@ -136,7 +129,7 @@ describe("Cart", () => {
 
   describe("Styling", () => {
     it("should apply correct CSS classes", () => {
-      (require("../../../context/CartContext") as any).useCart.mockReturnValue({
+      (useCart as jest.Mock).mockReturnValue({
         items: mockCartItems,
         updateQuantity: mockUpdateQuantity,
         removeItem: mockRemoveItem,
